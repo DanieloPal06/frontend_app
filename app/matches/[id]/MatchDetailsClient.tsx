@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Progress } from '@/components/ui/progress';
+// import { Progress } from '@/components/ui/progress';
 import { Bar, Pie } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -122,7 +122,7 @@ export default function MatchDetailsClient({ matchId }: { matchId: string }) {
               </TableRow>
             </TableHeader>
             <TableBody>
-              <TableRow>
+              {/* <TableRow>
                 <TableCell>Win Percentage</TableCell>
                 <TableCell>
                   <Progress value={matchDetails.player1.winPercentage} className="w-[60%] mr-2" />
@@ -132,7 +132,7 @@ export default function MatchDetailsClient({ matchId }: { matchId: string }) {
                   <Progress value={matchDetails.player2.winPercentage} className="w-[60%] mr-2" />
                   {matchDetails.player2.winPercentage}%
                 </TableCell>
-              </TableRow>
+              </TableRow> */}
               <TableRow>
                 <TableCell>Points Won</TableCell>
                 <TableCell>{matchDetails.player1.pointsWon}</TableCell>
