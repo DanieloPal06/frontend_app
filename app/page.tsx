@@ -154,7 +154,7 @@ export default function Home() {
           </div>
         </div>
         <div className="text-center mt-8 text-sm text-muted-foreground">
-          © 2023 PredictPal. All rights reserved.
+          © 2025 PredictPal. All rights reserved.
         </div>
       </footer>
     </div>
