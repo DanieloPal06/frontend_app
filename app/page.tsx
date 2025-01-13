@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section>
+      {/* <section>
         <h2 className="text-3xl font-bold mb-8 text-center">What Our Users Say</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <Card>
@@ -100,7 +100,7 @@ export default function Home() {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="bg-primary text-primary-foreground py-16 rounded-lg text-center">
