@@ -1,6 +1,14 @@
+import type { IconName } from '@/components/icons';
 export type Language = 'en' | 'es';
 
-export const content = {
+interface SocialLinkItem {
+  name: string;
+  url: string;
+  iconName: IconName;
+  ariaLabel: string;
+}
+
+export const content: Record<Language, any> = {
   en: {
     common: {
       switchToSpanish: "Español",
@@ -115,6 +123,11 @@ export const content = {
     footer: {
       copyright: `© ${new Date().getFullYear()} PredictPal. All rights reserved.`,
       message: "Bet responsibly.",
+      socialLinks: [
+        { name: "X", url: "https://x.com/predictpal", iconName: "Twitter", ariaLabel: "Follow us on X" },
+        { name: "Instagram", url: "https://instagram.com/predictpal", iconName: "Instagram", ariaLabel: "Follow us on Instagram" },
+        { name: "TikTok", url: "https://tiktok.com/@predictpal", iconName: "Music", ariaLabel: "Follow us on TikTok" },
+      ] as SocialLinkItem[],
     },
   },
   es: {
@@ -231,6 +244,11 @@ export const content = {
     footer: {
       copyright: `© ${new Date().getFullYear()} PredictPal. Todos los derechos reservados.`,
       message: "Apuesta con responsabilidad.",
+      socialLinks: [
+        { name: "X", url: "https://x.com/predictpal", iconName: "Twitter", ariaLabel: "Síguenos en X" },
+        { name: "Instagram", url: "https://instagram.com/predictpal", iconName: "Instagram", ariaLabel: "Síguenos en Instagram" },
+        { name: "TikTok", url: "https://tiktok.com/@predictpal", iconName: "Music", ariaLabel: "Síguenos en TikTok" },
+      ] as SocialLinkItem[],
     },
   },
 };

@@ -12,7 +12,10 @@ import {
   UserCheck,
   BookOpen,
   Icon as LucideIcon,
-   Languages
+  Languages,
+  Twitter, // Added for X
+  Instagram, // Added for Instagram
+  Music // Added as a placeholder for TikTok
 } from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 
@@ -29,7 +32,10 @@ export type IconName =
   | 'Gem'
   | 'UserCheck'
   | 'BookOpen'
-  | 'Languages';
+  | 'Languages'
+  | 'Twitter'
+  | 'Instagram'
+  | 'Music';
 
 const iconMap: Record<IconName, LucideIcon> = {
   Target,
@@ -44,7 +50,10 @@ const iconMap: Record<IconName, LucideIcon> = {
   Gem,
   UserCheck,
   BookOpen,
-  Languages
+  Languages,
+  Twitter,
+  Instagram,
+  Music
 };
 
 interface IconProps extends LucideProps {
@@ -55,7 +64,8 @@ export const Icon = ({ name, ...props }: IconProps) => {
   const LucideIconComponent = iconMap[name];
   if (!LucideIconComponent) {
     // Fallback or error handling
-    return null; 
+    console.warn(`Icon "${name}" not found.`);
+    return null;
   }
   return <LucideIconComponent {...props} />;
 };
