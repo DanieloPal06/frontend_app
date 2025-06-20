@@ -4,22 +4,22 @@
 
 @layer base {
   :root {
-    --background: 38 56% 91%; /* Bone White #F3EADF */
+    --background: 0 0% 100%; /* White #FFFFFF */
     --foreground: 0 0% 0%;    /* Black #000000 */
 
-    --card: 38 56% 93%; /* Slightly lighter Bone White for cards */
+    --card: 0 0% 100%; /* White */
     --card-foreground: 0 0% 0%;
 
-    --popover: 38 56% 93%;
+    --popover: 0 0% 100%; /* White */
     --popover-foreground: 0 0% 0%;
 
     --primary: 13 72% 52%;   /* Orange-Red #DD542E */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 38 50% 88%; /* Slightly darker Bone White */
+    --secondary: 0 0% 97%; /* Light Gray #F7F7F7 - to differentiate from pure white background */
     --secondary-foreground: 0 0% 15%; /* Dark Gray for text on secondary */
 
-    --muted: 38 50% 85%; /* More muted Bone White */
+    --muted: 0 0% 92%; /* Lighter Gray #EBEBEB - for muted elements */
     --muted-foreground: 0 0% 35%; /* Medium Gray for muted text */
 
     --accent: 213 64% 34%;    /* Dark Blue #1E4E8C */
@@ -28,8 +28,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 38 40% 80%; /* Border color from Bone White, darker */
-    --input: 38 45% 85%;  /* Input background from Bone White */
+    --border: 0 0% 88%; /* Light Gray Border #E0E0E0 */
+    --input: 0 0% 97%;  /* Light Gray Input #F7F7F7 */
     --ring: 13 72% 52%;   /* Ring color same as primary */
 
     --chart-1: 12 76% 61%;
@@ -40,35 +40,35 @@
     --radius: 0.5rem;
 
     /* Sidebar colors - updated to match theme */
-    --sidebar-background: 38 50% 93%; 
+    --sidebar-background: 0 0% 100%; /* White */
     --sidebar-foreground: 213 60% 25%; 
     --sidebar-primary: 13 72% 52%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 213 64% 34%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 38 40% 80%;
+    --sidebar-border: 0 0% 88%; /* Light Gray Border */
     --sidebar-ring: 13 72% 52%;
   }
 
   .dark {
     /* Dark theme based on the provided colors */
     --background: 213 60% 10%; /* Very dark blue */
-    --foreground: 38 56% 91%; /* Bone white for text */
+    --foreground: 0 0% 100%; /* White for text */
 
     --card: 213 60% 15%;
-    --card-foreground: 38 56% 91%;
+    --card-foreground: 0 0% 100%; /* White */
 
     --popover: 213 60% 15%;
-    --popover-foreground: 38 56% 91%;
+    --popover-foreground: 0 0% 100%; /* White */
 
     --primary: 13 72% 58%; /* Slightly lighter orange for dark mode */
     --primary-foreground: 0 0% 10%; /* Dark text on orange */
 
     --secondary: 213 50% 25%; /* Darker, muted blue */
-    --secondary-foreground: 38 56% 85%; /* Lighter text */
+    --secondary-foreground: 0 0% 95%; /* Lighter text #F2F2F2 */
 
     --muted: 213 50% 20%;
-    --muted-foreground: 38 56% 70%;
+    --muted-foreground: 0 0% 85%; /* Muted white text #D9D9D9 */
 
     --accent: 213 64% 50%; /* Lighter Blue */
     --accent-foreground: 0 0% 100%;
@@ -81,7 +81,7 @@
     --ring: 13 72% 58%;
 
     --sidebar-background: 213 60% 8%;
-    --sidebar-foreground: 38 56% 91%;
+    --sidebar-foreground: 0 0% 100%; /* White */
     --sidebar-primary: 13 72% 58%;
     --sidebar-primary-foreground: 0 0% 10%;
     --sidebar-accent: 213 64% 50%;
