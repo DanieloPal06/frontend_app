@@ -1,10 +1,11 @@
 "use client";
 
 import type { Dispatch, SetStateAction } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import type { Language } from '@/content/landing-page-content';
-import { Icon } from '@/components/icons'; // Import the Icon component
+import { Icon } from '@/components/icons'; 
 
 interface NavbarProps {
   language: Language;
@@ -23,15 +24,17 @@ interface NavbarProps {
 }
 
 export default function Navbar({ language, setLanguage, navContent, commonContent }: NavbarProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'es' : 'en');
   };
 
   const navItems = [
     { label: navContent.home, href: "#home" },
-    { label: navContent.mundialDeClubes, href: "#" }, // Informational
-    { label: navContent.academy, href: "#" }, // Informational
-    { label: navContent.donations, href: "#" }, // Informational
+    { label: navContent.mundialDeClubes, href: "#" }, 
+    { label: navContent.academy, href: "#" }, 
+    { label: navContent.donations, href: "#" }, 
   ];
 
   return (
@@ -42,6 +45,8 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
             {commonContent.appName}
           </span>
         </Link>
+        
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           {navItems.map((item) => (
             <Link
@@ -54,7 +59,8 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
             </Link>
           ))}
         </nav>
-        <div className="flex items-center">
+
+        <div className="flex items-center gap-2">
           <Button
             variant="ghost"
             size="sm"
@@ -65,9 +71,41 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
             <Icon name="Languages" className="mr-2 h-4 w-4" />
             {language === 'en' ? commonContent.switchToSpanish.substring(0,2).toUpperCase() : commonContent.switchToEnglish.substring(0,2).toUpperCase()}
           </Button>
-          {/* Add mobile menu toggle here if needed in future */}
+
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileMenuOpen ? <Icon name="X" className="h-5 w-5" /> : <Icon name="Menu" className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {mobileMenuOpen && (
+        <div className="absolute top-16 left-0 right-0 z-40 md:hidden bg-background border-b border-border/40 shadow-lg">
+          <nav className="flex flex-col items-center space-y-4 p-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="block w-full text-center py-2 transition-colors hover:text-primary"
+                onClick={(e) => {
+                  if (item.href === "#") e.preventDefault();
+                  setMobileMenuOpen(false); // Close menu on click
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

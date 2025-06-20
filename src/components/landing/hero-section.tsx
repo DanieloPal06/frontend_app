@@ -20,11 +20,11 @@ export default function HeroSection({ content }: HeroSectionProps) {
           <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl md:text-2xl animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
             {content.subtitle}
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
-            <Button size="lg" className="font-semibold">
+          <div className="mt-10 flex flex-col items-center justify-center gap-y-4 sm:flex-row sm:gap-x-6 sm:gap-y-0 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
+            <Button size="lg" className="font-semibold w-full sm:w-auto">
               {content.ctaPrimary}
             </Button>
-            <Button variant="outline" size="lg" className="font-semibold">
+            <Button variant="outline" size="lg" className="font-semibold w-full sm:w-auto">
               {content.ctaSecondary}
             </Button>
           </div>
