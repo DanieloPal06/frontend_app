@@ -1,3 +1,4 @@
+
 import type { IconName } from '@/components/icons';
 export type Language = 'en' | 'es';
 
@@ -10,6 +11,8 @@ interface SocialLinkItem {
 
 interface Donor {
   name: string;
+  amount: string;
+  message: string;
 }
 
 export const content: Record<Language, any> = {
@@ -25,7 +28,7 @@ export const content: Record<Language, any> = {
       home: "Home",
       mundialDeClubes: "Club World Cup",
       academy: "Academy",
-      donations: "Donations",
+      donations: "Donations", // Label remains the same
     },
     hero: {
       title: "Transform Your Table Tennis Betting with Cutting-Edge Predictive Analysis.",
@@ -124,17 +127,22 @@ export const content: Record<Language, any> = {
         },
       ],
     },
-    donations: {
-      sectionId: "donations",
+    donationsPage: { // Content specific for the /donations page
+      metaTitle: "Donate to PredictPal | Support Our Project",
+      metaDescription: "Support PredictPal by making a donation. Help us improve our table tennis prediction platform and community resources.",
+      // The actual section content is still under 'donations'
+    },
+    donations: { // Content for the DonationsSection component
+      sectionId: "donations-content", // Can be used as an ID for the main section tag if needed
       title: "Support PredictPal",
       description: "Your generous contributions help us maintain and improve PredictPal, develop new features, and continue providing valuable insights to the table tennis community. Every donation makes a difference!",
       paypalButtonText: "Donate with PayPal",
       paypalButtonAriaLabel: "Donate with PayPal to support PredictPal",
       thanksTitle: "Special Thanks To Our Donors",
       donors: [
-        { name: "John D." },
-        { name: "Maria S." },
-        { name: "Anonymous Champion" },
+        { name: "John D.", amount: "$50", message: "Keep up the great work!" },
+        { name: "Maria S.", amount: "€20", message: "Love the predictions! This is fantastic." },
+        { name: "Anonymous Champion", amount: "Generous Gift", message: "To support the community and future development." },
       ] as Donor[],
     },
     footer: {
@@ -159,7 +167,7 @@ export const content: Record<Language, any> = {
       home: "Inicio",
       mundialDeClubes: "Mundial de Clubes",
       academy: "Academia",
-      donations: "Donaciones",
+      donations: "Donaciones", // Label remains the same
     },
     hero: {
       title: "Transforma tus Apuestas de Tenis de Mesa con Análisis Predictivo de Vanguardia.",
@@ -258,17 +266,21 @@ export const content: Record<Language, any> = {
         },
       ],
     },
-    donations: {
-      sectionId: "donations",
+    donationsPage: { // Content specific for the /donations page
+      metaTitle: "Dona a PredictPal | Apoya Nuestro Proyecto",
+      metaDescription: "Apoya a PredictPal haciendo una donación. Ayúdanos a mejorar nuestra plataforma de predicción de tenis de mesa y recursos comunitarios.",
+    },
+    donations: { // Content for the DonationsSection component
+      sectionId: "donations-content",
       title: "Apoya a PredictPal",
       description: "Tus generosas contribuciones nos ayudan a mantener y mejorar PredictPal, desarrollar nuevas funciones y continuar brindando información valiosa a la comunidad del tenis de mesa. ¡Cada donación marca la diferencia!",
       paypalButtonText: "Donar con PayPal",
       paypalButtonAriaLabel: "Donar con PayPal para apoyar a PredictPal",
       thanksTitle: "Agradecimientos Especiales a Nuestros Donantes",
       donors: [
-        { name: "Juan D." },
-        { name: "María S." },
-        { name: "Campeón Anónimo" },
+        { name: "Juan D.", amount: "$50", message: "¡Sigan con el gran trabajo!" },
+        { name: "María S.", amount: "€20", message: "¡Me encantan las predicciones! Esto es fantástico." },
+        { name: "Campeón Anónimo", amount: "Donación Generosa", message: "Para apoyar a la comunidad y el desarrollo futuro." },
       ] as Donor[],
     },
     footer: {
@@ -282,3 +294,5 @@ export const content: Record<Language, any> = {
     },
   },
 };
+
+    

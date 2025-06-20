@@ -1,9 +1,12 @@
+
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/icons";
 
 interface Donor {
   name: string;
+  amount: string;
+  message: string;
 }
 
 interface DonationsSectionProps {
@@ -14,13 +17,13 @@ interface DonationsSectionProps {
     paypalButtonAriaLabel: string;
     thanksTitle: string;
     donors: Donor[];
-    sectionId: string;
+    sectionId: string; // Kept for potential use as element ID
   };
 }
 
 export default function DonationsSection({ content }: DonationsSectionProps) {
   return (
-    <section id={content.sectionId} className="py-16 md:py-24 bg-secondary">
+    <section id={content.sectionId || "donations"} className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-headline text-3xl font-bold text-foreground sm:text-4xl md:text-5xl animate-fadeInUp">
@@ -47,9 +50,13 @@ export default function DonationsSection({ content }: DonationsSectionProps) {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {content.donors.map((donor, index) => (
-            <Card key={index} className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 animate-fadeInUp bg-background" style={{ animationDelay: `${0.6 + index * 0.1}s` }}>
-              <CardContent className="p-6">
-                <p className="text-lg font-medium text-foreground">{donor.name}</p>
+            <Card key={index} className="flex flex-col text-left shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fadeInUp bg-card" style={{ animationDelay: `${0.6 + index * 0.1}s` }}>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl font-semibold text-foreground">{donor.name}</CardTitle>
+                <p className="text-sm font-medium text-primary">{donor.amount}</p>
+              </CardHeader>
+              <CardContent className="flex-grow pt-0">
+                <p className="text-base text-muted-foreground italic">"{donor.message}"</p>
               </CardContent>
             </Card>
           ))}
@@ -58,3 +65,5 @@ export default function DonationsSection({ content }: DonationsSectionProps) {
     </section>
   );
 }
+
+    

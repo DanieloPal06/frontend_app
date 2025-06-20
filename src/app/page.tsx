@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -9,7 +10,7 @@ import {
   TargetAudienceSection,
   MilestonesSection,
   PricingSection,
-  DonationsSection, // Imported DonationsSection
+  // DonationsSection removed from here
   Footer
 } from '@/components/landing';
 import { content } from '@/content/landing-page-content';
@@ -69,7 +70,6 @@ export default function LandingPage() {
 
   if (!isMounted) {
     // Render a placeholder or null during server rendering and initial client mount to avoid hydration mismatch
-    // This could be a simple loading spinner or a skeleton layout
     return (
       <div className="flex flex-col min-h-screen bg-background text-foreground items-center justify-center">
         <p>Loading PredictPal...</p>
@@ -92,9 +92,11 @@ export default function LandingPage() {
         <TargetAudienceSection content={currentContent.targetAudience} />
         <MilestonesSection content={currentContent.milestones} />
         <PricingSection content={currentContent.pricing} commonContent={currentContent.common} />
-        <DonationsSection content={currentContent.donations} /> {/* Added DonationsSection */}
+        {/* DonationsSection removed from here */}
       </main>
       <Footer content={currentContent.footer} />
     </div>
   );
 }
+
+    

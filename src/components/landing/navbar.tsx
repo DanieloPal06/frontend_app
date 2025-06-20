@@ -32,10 +32,10 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
   };
 
   const navItems = [
-    { label: navContent.home, href: "#home" },
-    { label: navContent.mundialDeClubes, href: "#mundial-de-clubes" }, // Assuming an ID for this section
-    { label: navContent.academy, href: "#academy" }, // Assuming an ID for this section
-    { label: navContent.donations, href: "#donations" }, // Updated href for donations
+    { label: navContent.home, href: "/#home" }, // Keep / for root page anchor
+    { label: navContent.mundialDeClubes, href: "/#mundial-de-clubes" }, // Keep / for root page anchor
+    { label: navContent.academy, href: "/#academy" }, // Keep / for root page anchor
+    { label: navContent.donations, href: "/donations" }, // Updated href for donations page
   ];
 
   return (
@@ -54,14 +54,19 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
               href={item.href}
               className="transition-colors hover:text-primary"
               onClick={(e) => { 
-                if (item.href.startsWith("#") && item.href !== "#") {
-                  // Smooth scroll for internal links
-                  const element = document.getElementById(item.href.substring(1));
-                  if (element) {
-                    e.preventDefault();
-                    element.scrollIntoView({ behavior: 'smooth' });
+                if (item.href.startsWith("/#") && item.href !== "/#") {
+                  // Smooth scroll for internal links on the same page (root)
+                  // Check if current page is root, then scroll
+                  if (window.location.pathname === '/') {
+                    const elementId = item.href.substring(2); // remove '/#'
+                    const element = document.getElementById(elementId);
+                    if (element) {
+                      e.preventDefault();
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
                   }
-                } else if (item.href === "#") {
+                  // If not on root page, NextLink will handle navigation to root then browser handles hash
+                } else if (item.href === "#" || item.href === "/#") {
                     e.preventDefault(); // Prevent default for placeholder links
                 }
               }}
@@ -108,13 +113,16 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
                 href={item.href}
                 className="block w-full text-center py-3 px-4 transition-colors hover:text-primary hover:bg-muted"
                 onClick={(e) => {
-                  if (item.href.startsWith("#") && item.href !== "#") {
-                    const element = document.getElementById(item.href.substring(1));
-                    if (element) {
-                      e.preventDefault();
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  } else if (item.href === "#") {
+                  if (item.href.startsWith("/#") && item.href !== "/#") {
+                     if (window.location.pathname === '/') {
+                        const elementId = item.href.substring(2);
+                        const element = document.getElementById(elementId);
+                        if (element) {
+                          e.preventDefault();
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                     }
+                  } else if (item.href === "#" || item.href === "/#") {
                       e.preventDefault();
                   }
                   setMobileMenuOpen(false); 
@@ -143,3 +151,5 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
     </header>
   );
 }
+
+    
