@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { Dispatch, SetStateAction } from 'react';
@@ -46,7 +47,6 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
           </span>
         </Link>
         
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           {navItems.map((item) => (
             <Link
@@ -61,12 +61,13 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
         </nav>
 
         <div className="flex items-center gap-2">
+          {/* Language Switcher for Desktop */}
           <Button
             variant="ghost"
             size="sm"
             onClick={toggleLanguage}
             aria-label={language === 'en' ? commonContent.switchToSpanish : commonContent.switchToEnglish}
-            className="text-sm"
+            className="hidden md:inline-flex text-sm" // Hidden on mobile, shown on desktop
           >
             <Icon name="Languages" className="mr-2 h-4 w-4" />
             {language === 'en' ? commonContent.switchToSpanish.substring(0,2).toUpperCase() : commonContent.switchToEnglish.substring(0,2).toUpperCase()}
@@ -89,20 +90,34 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
         <div className="absolute top-16 left-0 right-0 z-40 md:hidden bg-background border-b border-border/40 shadow-lg">
-          <nav className="flex flex-col items-center space-y-4 p-4">
+          <nav className="flex flex-col items-stretch divide-y divide-border/40">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="block w-full text-center py-2 transition-colors hover:text-primary"
+                className="block w-full text-center py-3 px-4 transition-colors hover:text-primary hover:bg-muted"
                 onClick={(e) => {
                   if (item.href === "#") e.preventDefault();
-                  setMobileMenuOpen(false); // Close menu on click
+                  setMobileMenuOpen(false); 
                 }}
               >
                 {item.label}
               </Link>
             ))}
+            {/* Language Switcher for Mobile Menu */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => {
+                toggleLanguage();
+                setMobileMenuOpen(false);
+              }}
+              aria-label={language === 'en' ? commonContent.switchToSpanish : commonContent.switchToEnglish}
+              className="flex items-center justify-center w-full py-3 px-4 text-sm hover:text-primary hover:bg-muted rounded-none"
+            >
+              <Icon name="Languages" className="mr-2 h-4 w-4" />
+              {language === 'en' ? commonContent.switchToSpanish : commonContent.switchToEnglish}
+            </Button>
           </nav>
         </div>
       )}
