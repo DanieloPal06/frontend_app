@@ -19,7 +19,7 @@ export const content: Record<Language, any> = {
     },
     nav: {
       home: "Home",
-      mundialDeClubes: "Mundial de Clubes",
+      mundialDeClubes: "Club World Cup", // Changed from "Mundial de Clubes"
       academy: "Academy",
       donations: "Donations",
     },
