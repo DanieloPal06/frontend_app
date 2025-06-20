@@ -8,6 +8,10 @@ interface SocialLinkItem {
   ariaLabel: string;
 }
 
+interface Donor {
+  name: string;
+}
+
 export const content: Record<Language, any> = {
   en: {
     common: {
@@ -19,7 +23,7 @@ export const content: Record<Language, any> = {
     },
     nav: {
       home: "Home",
-      mundialDeClubes: "Club World Cup", // Changed from "Mundial de Clubes"
+      mundialDeClubes: "Club World Cup",
       academy: "Academy",
       donations: "Donations",
     },
@@ -119,6 +123,19 @@ export const content: Record<Language, any> = {
           icon: "BookOpen",
         },
       ],
+    },
+    donations: {
+      sectionId: "donations",
+      title: "Support PredictPal",
+      description: "Your generous contributions help us maintain and improve PredictPal, develop new features, and continue providing valuable insights to the table tennis community. Every donation makes a difference!",
+      paypalButtonText: "Donate with PayPal",
+      paypalButtonAriaLabel: "Donate with PayPal to support PredictPal",
+      thanksTitle: "Special Thanks To Our Donors",
+      donors: [
+        { name: "John D." },
+        { name: "Maria S." },
+        { name: "Anonymous Champion" },
+      ] as Donor[],
     },
     footer: {
       copyright: `© ${new Date().getFullYear()} PredictPal. All rights reserved.`,
@@ -240,6 +257,19 @@ export const content: Record<Language, any> = {
           icon: "BookOpen",
         },
       ],
+    },
+    donations: {
+      sectionId: "donations",
+      title: "Apoya a PredictPal",
+      description: "Tus generosas contribuciones nos ayudan a mantener y mejorar PredictPal, desarrollar nuevas funciones y continuar brindando información valiosa a la comunidad del tenis de mesa. ¡Cada donación marca la diferencia!",
+      paypalButtonText: "Donar con PayPal",
+      paypalButtonAriaLabel: "Donar con PayPal para apoyar a PredictPal",
+      thanksTitle: "Agradecimientos Especiales a Nuestros Donantes",
+      donors: [
+        { name: "Juan D." },
+        { name: "María S." },
+        { name: "Campeón Anónimo" },
+      ] as Donor[],
     },
     footer: {
       copyright: `© ${new Date().getFullYear()} PredictPal. Todos los derechos reservados.`,

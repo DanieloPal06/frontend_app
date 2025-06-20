@@ -17,7 +17,8 @@ import {
   Instagram, // Added for Instagram
   Music, // Added as a placeholder for TikTok
   Menu, // Added for mobile menu
-  X // Added for close icon
+  X, // Added for close icon
+  Heart // Added for Donations
 } from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 
@@ -39,7 +40,8 @@ export type IconName =
   | 'Instagram'
   | 'Music'
   | 'Menu'
-  | 'X';
+  | 'X'
+  | 'Heart';
 
 const iconMap: Record<IconName, LucideIcon> = {
   Target,
@@ -60,6 +62,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Music,
   Menu,
   X,
+  Heart,
 };
 
 interface IconProps extends LucideProps {

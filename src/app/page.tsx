@@ -9,6 +9,7 @@ import {
   TargetAudienceSection,
   MilestonesSection,
   PricingSection,
+  DonationsSection, // Imported DonationsSection
   Footer
 } from '@/components/landing';
 import { content } from '@/content/landing-page-content';
@@ -46,7 +47,7 @@ export default function LandingPage() {
       { threshold: 0.1 } // Adjust threshold as needed
     );
 
-    const sections = document.querySelectorAll('section > div > div.animate-fadeInUp, section > div > h2.animate-fadeInUp');
+    const sections = document.querySelectorAll('section > div > div.animate-fadeInUp, section > div > h2.animate-fadeInUp, section > div > h3.animate-fadeInUp, section div.grid > div.animate-fadeInUp, section > div > p.animate-fadeInUp');
     sections.forEach((section) => {
       section.classList.add('opacity-0', 'translate-y-5', 'transition-all', 'duration-700', 'ease-out');
       observer.observe(section);
@@ -91,6 +92,7 @@ export default function LandingPage() {
         <TargetAudienceSection content={currentContent.targetAudience} />
         <MilestonesSection content={currentContent.milestones} />
         <PricingSection content={currentContent.pricing} commonContent={currentContent.common} />
+        <DonationsSection content={currentContent.donations} /> {/* Added DonationsSection */}
       </main>
       <Footer content={currentContent.footer} />
     </div>

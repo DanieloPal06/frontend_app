@@ -33,9 +33,9 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
 
   const navItems = [
     { label: navContent.home, href: "#home" },
-    { label: navContent.mundialDeClubes, href: "#" }, 
-    { label: navContent.academy, href: "#" }, 
-    { label: navContent.donations, href: "#" }, 
+    { label: navContent.mundialDeClubes, href: "#mundial-de-clubes" }, // Assuming an ID for this section
+    { label: navContent.academy, href: "#academy" }, // Assuming an ID for this section
+    { label: navContent.donations, href: "#donations" }, // Updated href for donations
   ];
 
   return (
@@ -53,7 +53,18 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
               key={item.label}
               href={item.href}
               className="transition-colors hover:text-primary"
-              onClick={(e) => { if (item.href === "#") e.preventDefault(); }}
+              onClick={(e) => { 
+                if (item.href.startsWith("#") && item.href !== "#") {
+                  // Smooth scroll for internal links
+                  const element = document.getElementById(item.href.substring(1));
+                  if (element) {
+                    e.preventDefault();
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                } else if (item.href === "#") {
+                    e.preventDefault(); // Prevent default for placeholder links
+                }
+              }}
             >
               {item.label}
             </Link>
@@ -67,7 +78,7 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
             size="sm"
             onClick={toggleLanguage}
             aria-label={language === 'en' ? commonContent.switchToSpanish : commonContent.switchToEnglish}
-            className="hidden md:inline-flex text-sm" // Hidden on mobile, shown on desktop
+            className="hidden md:inline-flex text-sm" 
           >
             <Icon name="Languages" className="mr-2 h-4 w-4" />
             {language === 'en' ? commonContent.switchToSpanish.substring(0,2).toUpperCase() : commonContent.switchToEnglish.substring(0,2).toUpperCase()}
@@ -97,7 +108,15 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
                 href={item.href}
                 className="block w-full text-center py-3 px-4 transition-colors hover:text-primary hover:bg-muted"
                 onClick={(e) => {
-                  if (item.href === "#") e.preventDefault();
+                  if (item.href.startsWith("#") && item.href !== "#") {
+                    const element = document.getElementById(item.href.substring(1));
+                    if (element) {
+                      e.preventDefault();
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  } else if (item.href === "#") {
+                      e.preventDefault();
+                  }
                   setMobileMenuOpen(false); 
                 }}
               >
