@@ -1,3 +1,4 @@
+
 import {
   Target,
   BarChart3,
@@ -13,12 +14,13 @@ import {
   BookOpen,
   Icon as LucideIcon,
   Languages,
-  Twitter, // Added for X
-  Instagram, // Added for Instagram
-  Music, // Added as a placeholder for TikTok
-  Menu, // Added for mobile menu
-  X, // Added for close icon
-  Heart // Added for Donations
+  Twitter, 
+  Instagram, 
+  Music, 
+  Menu, 
+  X, 
+  Heart,
+  CalendarDays // Added for Club World Cup (potentially)
 } from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 
@@ -41,7 +43,8 @@ export type IconName =
   | 'Music'
   | 'Menu'
   | 'X'
-  | 'Heart';
+  | 'Heart'
+  | 'CalendarDays';
 
 const iconMap: Record<IconName, LucideIcon> = {
   Target,
@@ -63,6 +66,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Menu,
   X,
   Heart,
+  CalendarDays,
 };
 
 interface IconProps extends LucideProps {
@@ -72,7 +76,6 @@ interface IconProps extends LucideProps {
 export const Icon = ({ name, ...props }: IconProps) => {
   const LucideIconComponent = iconMap[name];
   if (!LucideIconComponent) {
-    // Fallback or error handling
     console.warn(`Icon "${name}" not found.`);
     return null;
   }

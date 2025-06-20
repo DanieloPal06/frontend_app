@@ -32,10 +32,10 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
   };
 
   const navItems = [
-    { label: navContent.home, href: "/#home" }, // Keep / for root page anchor
-    { label: navContent.mundialDeClubes, href: "/#mundial-de-clubes" }, // Keep / for root page anchor
-    { label: navContent.academy, href: "/#academy" }, // Keep / for root page anchor
-    { label: navContent.donations, href: "/donations" }, // Updated href for donations page
+    { label: navContent.home, href: "/#home" },
+    { label: navContent.mundialDeClubes, href: "/club-world-cup" }, // Updated href
+    { label: navContent.academy, href: "/#academy" },
+    { label: navContent.donations, href: "/donations" },
   ];
 
   return (
@@ -55,19 +55,16 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
               className="transition-colors hover:text-primary"
               onClick={(e) => { 
                 if (item.href.startsWith("/#") && item.href !== "/#") {
-                  // Smooth scroll for internal links on the same page (root)
-                  // Check if current page is root, then scroll
                   if (window.location.pathname === '/') {
-                    const elementId = item.href.substring(2); // remove '/#'
+                    const elementId = item.href.substring(2); 
                     const element = document.getElementById(elementId);
                     if (element) {
                       e.preventDefault();
                       element.scrollIntoView({ behavior: 'smooth' });
                     }
                   }
-                  // If not on root page, NextLink will handle navigation to root then browser handles hash
                 } else if (item.href === "#" || item.href === "/#") {
-                    e.preventDefault(); // Prevent default for placeholder links
+                    e.preventDefault(); 
                 }
               }}
             >
@@ -77,7 +74,6 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
         </nav>
 
         <div className="flex items-center gap-2">
-          {/* Language Switcher for Desktop */}
           <Button
             variant="ghost"
             size="sm"
@@ -89,7 +85,6 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
             {language === 'en' ? commonContent.switchToSpanish.substring(0,2).toUpperCase() : commonContent.switchToEnglish.substring(0,2).toUpperCase()}
           </Button>
 
-          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <Button
               variant="ghost"
@@ -103,7 +98,6 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
         <div className="absolute top-16 left-0 right-0 z-40 md:hidden bg-background border-b border-border/40 shadow-lg">
           <nav className="flex flex-col items-stretch divide-y divide-border/40">
@@ -131,7 +125,6 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
                 {item.label}
               </Link>
             ))}
-            {/* Language Switcher for Mobile Menu */}
             <Button
               variant="ghost"
               size="sm"
@@ -151,5 +144,3 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
     </header>
   );
 }
-
-    

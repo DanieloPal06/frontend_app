@@ -26,9 +26,9 @@ export const content: Record<Language, any> = {
     },
     nav: {
       home: "Home",
-      mundialDeClubes: "Club World Cup",
+      mundialDeClubes: "Club World Cup", // Label updated
       academy: "Academy",
-      donations: "Donations", // Label remains the same
+      donations: "Donations", 
     },
     hero: {
       title: "Transform Your Table Tennis Betting with Cutting-Edge Predictive Analysis.",
@@ -127,13 +127,12 @@ export const content: Record<Language, any> = {
         },
       ],
     },
-    donationsPage: { // Content specific for the /donations page
+    donationsPage: { 
       metaTitle: "Donate to PredictPal | Support Our Project",
       metaDescription: "Support PredictPal by making a donation. Help us improve our table tennis prediction platform and community resources.",
-      // The actual section content is still under 'donations'
     },
-    donations: { // Content for the DonationsSection component
-      sectionId: "donations-content", // Can be used as an ID for the main section tag if needed
+    donations: { 
+      sectionId: "donations-content", 
       title: "Support PredictPal",
       description: "Your generous contributions help us maintain and improve PredictPal, develop new features, and continue providing valuable insights to the table tennis community. Every donation makes a difference!",
       paypalButtonText: "Donate with PayPal",
@@ -165,9 +164,9 @@ export const content: Record<Language, any> = {
     },
     nav: {
       home: "Inicio",
-      mundialDeClubes: "Mundial de Clubes",
+      mundialDeClubes: "Mundial de Clubes", // Label updated
       academy: "Academia",
-      donations: "Donaciones", // Label remains the same
+      donations: "Donaciones", 
     },
     hero: {
       title: "Transforma tus Apuestas de Tenis de Mesa con Análisis Predictivo de Vanguardia.",
@@ -266,11 +265,11 @@ export const content: Record<Language, any> = {
         },
       ],
     },
-    donationsPage: { // Content specific for the /donations page
+    donationsPage: { 
       metaTitle: "Dona a PredictPal | Apoya Nuestro Proyecto",
       metaDescription: "Apoya a PredictPal haciendo una donación. Ayúdanos a mejorar nuestra plataforma de predicción de tenis de mesa y recursos comunitarios.",
     },
-    donations: { // Content for the DonationsSection component
+    donations: { 
       sectionId: "donations-content",
       title: "Apoya a PredictPal",
       description: "Tus generosas contribuciones nos ayudan a mantener y mejorar PredictPal, desarrollar nuevas funciones y continuar brindando información valiosa a la comunidad del tenis de mesa. ¡Cada donación marca la diferencia!",
@@ -294,5 +293,3 @@ export const content: Record<Language, any> = {
     },
   },
 };
-
-    
