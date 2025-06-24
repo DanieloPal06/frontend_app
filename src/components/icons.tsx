@@ -20,7 +20,8 @@ import {
   Menu, 
   X, 
   Heart,
-  CalendarDays // Added for Club World Cup (potentially)
+  CalendarDays,
+  Youtube
 } from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 
@@ -44,7 +45,8 @@ export type IconName =
   | 'Menu'
   | 'X'
   | 'Heart'
-  | 'CalendarDays';
+  | 'CalendarDays'
+  | 'Youtube';
 
 const iconMap: Record<IconName, LucideIcon> = {
   Target,
@@ -67,6 +69,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   X,
   Heart,
   CalendarDays,
+  Youtube,
 };
 
 interface IconProps extends LucideProps {
