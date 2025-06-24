@@ -18,15 +18,18 @@ interface Donor {
 export const content: Record<Language, any> = {
   en: {
     common: {
-      switchToSpanish: "Español",
-      switchToEnglish: "English",
+      changeLanguage: "Change language",
+      languageMenu: {
+          english: "English",
+          spanish: "Spanish",
+      },
       appName: "PredictPal",
       learnMore: "Learn More",
       getStarted: "Get Started",
     },
     nav: {
       home: "Home",
-      mundialDeClubes: "Club World Cup", // Label updated
+      mundialDeClubes: "Club World Cup",
       academy: "Academy",
       donations: "Donations", 
     },
@@ -156,15 +159,18 @@ export const content: Record<Language, any> = {
   },
   es: {
     common: {
-      switchToSpanish: "Español",
-      switchToEnglish: "English",
+      changeLanguage: "Cambiar idioma",
+      languageMenu: {
+          english: "Inglés",
+          spanish: "Español",
+      },
       appName: "PredictPal",
       learnMore: "Aprende Más",
       getStarted: "Comenzar",
     },
     nav: {
       home: "Inicio",
-      mundialDeClubes: "Mundial de Clubes", // Label updated
+      mundialDeClubes: "Mundial de Clubes",
       academy: "Academia",
       donations: "Donaciones", 
     },

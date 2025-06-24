@@ -1,4 +1,3 @@
-
 "use client";
 
 import type { Dispatch, SetStateAction } from 'react';
@@ -7,6 +6,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import type { Language } from '@/content/landing-page-content';
 import { Icon } from '@/components/icons'; 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface NavbarProps {
   language: Language;
@@ -18,22 +23,25 @@ interface NavbarProps {
     donations: string;
   };
   commonContent: {
-    switchToSpanish: string;
-    switchToEnglish: string;
     appName: string;
+    changeLanguage: string;
+    languageMenu: {
+        english: string;
+        spanish: string;
+    }
   };
 }
 
 export default function Navbar({ language, setLanguage, navContent, commonContent }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'es' : 'en');
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
   };
 
   const navItems = [
     { label: navContent.home, href: "/#home" },
-    { label: navContent.mundialDeClubes, href: "/club-world-cup" }, // Updated href
+    { label: navContent.mundialDeClubes, href: "/club-world-cup" },
     { label: navContent.academy, href: "/#academy" },
     { label: navContent.donations, href: "/donations" },
   ];
@@ -74,16 +82,26 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={toggleLanguage}
-            aria-label={language === 'en' ? commonContent.switchToSpanish : commonContent.switchToEnglish}
-            className="hidden md:inline-flex text-sm" 
-          >
-            <Icon name="Languages" className="mr-2 h-4 w-4" />
-            {language === 'en' ? commonContent.switchToSpanish.substring(0,2).toUpperCase() : commonContent.switchToEnglish.substring(0,2).toUpperCase()}
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label={commonContent.changeLanguage}
+                className="hidden md:inline-flex"
+              >
+                <Icon name="Languages" className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onSelect={() => handleLanguageChange('en')}>
+                {commonContent.languageMenu.english}
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => handleLanguageChange('es')}>
+                {commonContent.languageMenu.spanish}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <div className="md:hidden">
             <Button
@@ -125,19 +143,25 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
                 {item.label}
               </Link>
             ))}
-            <Button
-              variant="ghost"
-              size="sm"
+            
+            <button
               onClick={() => {
-                toggleLanguage();
+                handleLanguageChange('en');
                 setMobileMenuOpen(false);
               }}
-              aria-label={language === 'en' ? commonContent.switchToSpanish : commonContent.switchToEnglish}
-              className="flex items-center justify-center w-full py-3 px-4 text-sm hover:text-primary hover:bg-muted rounded-none"
+              className={`w-full text-center py-3 px-4 transition-colors hover:text-primary hover:bg-muted ${language === 'en' ? 'font-semibold text-primary' : ''}`}
             >
-              <Icon name="Languages" className="mr-2 h-4 w-4" />
-              {language === 'en' ? commonContent.switchToSpanish : commonContent.switchToEnglish}
-            </Button>
+              {commonContent.languageMenu.english}
+            </button>
+            <button
+              onClick={() => {
+                handleLanguageChange('es');
+                setMobileMenuOpen(false);
+              }}
+              className={`w-full text-center py-3 px-4 transition-colors hover:text-primary hover:bg-muted ${language === 'es' ? 'font-semibold text-primary' : ''}`}
+            >
+              {commonContent.languageMenu.spanish}
+            </button>
           </nav>
         </div>
       )}
