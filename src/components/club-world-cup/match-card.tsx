@@ -32,9 +32,16 @@ interface MatchCardProps {
   };
 }
 
-function TeamDisplay({ team, vsLabel }: { team: NonNullable<Match['team1']>; vsLabel?: string }) {
+interface TeamDisplayProps {
+  team: NonNullable<Match['team1']>;
+  isReversedOnDesktop?: boolean;
+}
+
+function TeamDisplay({ team, isReversedOnDesktop = false }: TeamDisplayProps) {
+  const desktopFlexDirection = isReversedOnDesktop ? 'md:flex-row-reverse' : 'md:flex-row';
+
   return (
-    <div className="flex flex-col items-center text-center md:flex-row md:text-left gap-2 w-full">
+    <div className={`flex w-full flex-col items-center gap-2 text-center md:justify-between md:text-left ${desktopFlexDirection}`}>
       <div className='flex items-center gap-2'>
         {team.logoUrl && (
           <Image
@@ -49,7 +56,7 @@ function TeamDisplay({ team, vsLabel }: { team: NonNullable<Match['team1']>; vsL
         <span className="font-semibold text-base md:text-lg group-hover:text-primary transition-colors">{team.name}</span>
       </div>
       {typeof team.score === 'number' && (
-        <span className="font-bold text-xl text-primary ml-auto">{team.score}</span>
+        <span className="font-bold text-xl text-primary">{team.score}</span>
       )}
     </div>
   );
@@ -180,8 +187,8 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
               <div className="text-muted-foreground font-bold text-lg">
                 {labels.vs}
               </div>
-              <div className="w-full md:w-2/5 flex justify-center md:justify-start flex-row-reverse md:flex-row">
-                <TeamDisplay team={match.team2} />
+              <div className="w-full md:w-2/5 flex justify-center md:justify-end">
+                <TeamDisplay team={match.team2} isReversedOnDesktop={true} />
               </div>
             </div>
             <Separator className="my-3" />
