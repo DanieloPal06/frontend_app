@@ -82,6 +82,12 @@ export const teams: Record<string, Team> = {
 
 type MatchStatus = 'SCHEDULED' | 'FINISHED' | 'LIVE' | 'POSTPONED';
 
+interface RawPrediction {
+  title: string;
+  analysis: string;
+  keyPredictions: { label: string; value: string }[];
+}
+
 /**
  * Raw structure for a match, using IDs to reference teams.
  */
@@ -100,11 +106,11 @@ interface RawMatch {
   details?: {
     en: {
       stats: { title: string; content: string[] };
-      prediction: { title: string; content: string };
+      prediction: RawPrediction;
     };
     es: {
       stats: { title: string; content: string[] };
-      prediction: { title: string; content: string };
+      prediction: RawPrediction;
     };
   };
 }
@@ -141,7 +147,8 @@ const rawSchedule: RawDaySchedule[] = [
             },
             prediction: {
               title: "Match Analysis",
-              content: "Inter Miami was predicted to have a slight edge due to home advantage and recent form, but Al Ahly's defense proved resilient, leading to a hard-fought draw."
+              analysis: "Inter Miami was predicted to have a slight edge due to home advantage and recent form, but Al Ahly's defense proved resilient, leading to a hard-fought draw.",
+              keyPredictions: []
             }
           },
           es: {
@@ -151,7 +158,8 @@ const rawSchedule: RawDaySchedule[] = [
             },
             prediction: {
               title: "Análisis del Partido",
-              content: "Se predijo que Inter Miami tenía una ligera ventaja por jugar en casa y su forma reciente, pero la defensa de Al Ahly demostró ser resiliente, lo que llevó a un reñido empate."
+              analysis: "Se predijo que Inter Miami tenía una ligera ventaja por jugar en casa y su forma reciente, pero la defensa de Al Ahly demostró ser resiliente, lo que llevó a un reñido empate.",
+              keyPredictions: []
             }
           }
         }
@@ -174,7 +182,60 @@ const rawSchedule: RawDaySchedule[] = [
     dateISO: "2025-06-25",
     dayLabelKey: "day12",
     matches: [
-      { id: "CWC-2025-15", time: "14:00 COT", team1Id: "BVB", score1: null, team2Id: "ULS", score2: null, venue: { en: "TQL Stadium, Cincinnati OH", es: "TQL Stadium, Cincinnati OH" }, status: "SCHEDULED" },
+      { 
+        id: "CWC-2025-15", 
+        time: "14:00 COT", 
+        team1Id: "BVB", 
+        score1: null, 
+        team2Id: "ULS", 
+        score2: null, 
+        venue: { en: "TQL Stadium, Cincinnati OH", es: "TQL Stadium, Cincinnati OH" }, 
+        status: "SCHEDULED",
+        details: {
+          en: {
+            stats: {
+              title: "Team Head-to-Head",
+              content: [
+                "This is the first official meeting between Borussia Dortmund and Ulsan Hyundai.",
+                "Dortmund's recent Champions League performance shows strong offensive capabilities.",
+                "Ulsan Hyundai dominated the K League 1 with a solid defensive record."
+              ]
+            },
+            prediction: {
+              title: "PredictPal's AI Analysis",
+              analysis: "Borussia Dortmund is the clear favorite, but Ulsan's disciplined defense could pose a challenge. We predict a narrow victory for the German side, with chances for both teams to score.",
+              keyPredictions: [
+                { label: "Match Winner", value: "Borussia Dortmund (75% probability)" },
+                { label: "Total Goals", value: "Over 2.5 (60% probability)" },
+                { label: "Total Corners", value: "Over 9.5 (70% probability)" },
+                { label: "Total Cards", value: "Under 4.5 (85% probability)" },
+                { label: "Both Teams to Score", value: "Yes (55% probability)" }
+              ]
+            }
+          },
+          es: {
+            stats: {
+              title: "Análisis Cara a Cara",
+              content: [
+                "Este es el primer encuentro oficial entre Borussia Dortmund y Ulsan Hyundai.",
+                "El reciente desempeño del Dortmund en la Champions League muestra una gran capacidad ofensiva.",
+                "Ulsan Hyundai dominó la K League 1 con un sólido récord defensivo."
+              ]
+            },
+            prediction: {
+              title: "Análisis de IA de PredictPal",
+              analysis: "El Borussia Dortmund es el claro favorito, pero la defensa disciplinada de Ulsan podría presentar un desafío. Predecimos una victoria ajustada para el equipo alemán, con oportunidades de gol para ambos equipos.",
+              keyPredictions: [
+                { label: "Ganador del Partido", value: "Borussia Dortmund (75% probabilidad)" },
+                { label: "Goles Totales", value: "Más de 2.5 (60% probabilidad)" },
+                { label: "Córners Totales", value: "Más de 9.5 (70% probabilidad)" },
+                { label: "Tarjetas Totales", value: "Menos de 4.5 (85% probabilidad)" },
+                { label: "Ambos Equipos Anotan", value: "Sí (55% probabilidad)" }
+              ]
+            }
+          }
+        }
+      },
       { id: "CWC-2025-16", time: "14:00 COT", team1Id: "MAM", score1: null, team2Id: "FLU", score2: null, venue: { en: "HARD ROCK STADIUM, Miami", es: "HARD ROCK STADIUM, Miami" }, status: "SCHEDULED" },
       { id: "CWC-2025-17", time: "20:00 COT", team1Id: "INT", score1: null, team2Id: "RIV", score2: null, venue: { en: "Lumen Field, Seattle, USA", es: "Lumen Field, Seattle, USA" }, status: "SCHEDULED" },
       { id: "CWC-2025-18", time: "20:00 COT", team1Id: "URA", score1: null, team2Id: "MON", score2: null, venue: { en: "Rose Bowl Stadium, Pasadena", es: "Rose Bowl, Pasadena" }, status: "SCHEDULED" },
@@ -202,7 +263,11 @@ export interface Match {
   status: MatchStatus;
   details?: {
     stats: { title: string; content: string[] };
-    prediction: { title: string; content: string };
+    prediction: {
+      title: string;
+      analysis: string;
+      keyPredictions: { label: string; value: string }[];
+    };
   };
 }
 

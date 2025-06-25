@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from '@/components/ui/separator';
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 interface MatchCardProps {
   match: Match;
@@ -110,7 +111,19 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
           <Separator />
           <div>
             <h3 className="text-lg font-semibold mb-2">{prediction.title}</h3>
-            <p className="text-muted-foreground whitespace-pre-wrap">{prediction.content}</p>
+            <p className="text-sm text-muted-foreground mb-4">{prediction.analysis}</p>
+            {prediction.keyPredictions && prediction.keyPredictions.length > 0 && (
+                <Table>
+                    <TableBody>
+                        {prediction.keyPredictions.map((pred, index) => (
+                            <TableRow key={index} className="hover:bg-muted/50">
+                                <TableCell className="font-medium text-secondary-foreground">{pred.label}</TableCell>
+                                <TableCell className="text-right font-semibold text-primary">{pred.value}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            )}
           </div>
         </div>
       </>
