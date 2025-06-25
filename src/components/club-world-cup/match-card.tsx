@@ -7,6 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface MatchCardProps {
   match: Match;
@@ -42,7 +43,7 @@ function TeamDisplay({ team, isReversedOnDesktop = false }: TeamDisplayProps) {
 
   return (
     <div className={`flex w-full flex-col items-center gap-2 text-center md:justify-between md:text-left ${desktopFlexDirection}`}>
-      <div className='flex items-center gap-2'>
+      <div className='flex flex-col items-center gap-2 md:flex-row'>
         {team.logoUrl && (
           <Image
             src={team.logoUrl}
@@ -88,83 +89,6 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
     }
   }
 
-  const renderDialogContent = () => {
-    if (!match.details) {
-      return (
-        <>
-          <DialogHeader>
-            <DialogTitle>{dialogLabels.title}</DialogTitle>
-          </DialogHeader>
-          <div className="py-4">
-            <p className="text-muted-foreground">{dialogLabels.noDetails}</p>
-          </div>
-        </>
-      );
-    }
-
-    const { stats, prediction } = match.details;
-
-    return (
-      <>
-        <DialogHeader>
-          <DialogTitle>{dialogLabels.title}</DialogTitle>
-          <DialogDescription className="text-center sm:text-left pt-1">
-            {match.team1.name} vs {match.team2.name}
-          </DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div>
-            <h3 className="text-lg font-semibold mb-2">{stats.title}</h3>
-            <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-              {stats.content.map((stat, index) => (
-                <li key={index}>{stat}</li>
-              ))}
-            </ul>
-          </div>
-          <Separator />
-          <div>
-            <h3 className="text-lg font-semibold mb-2">{prediction.title}</h3>
-            <p className="text-sm text-muted-foreground mb-4">{prediction.analysis}</p>
-            {prediction.keyPredictions && prediction.keyPredictions.length > 0 && (
-                <Table>
-                    <TableHeader>
-                        <TableRow className="hover:bg-transparent">
-                            <TableHead className="pl-0">{dialogLabels.predictionColumn}</TableHead>
-                            <TableHead>{dialogLabels.outcomeColumn}</TableHead>
-                            <TableHead className="text-center">{dialogLabels.oddsColumn}</TableHead>
-                            <TableHead className="text-right pr-0">{dialogLabels.bookmakerColumn}</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {prediction.keyPredictions.map((pred, index) => (
-                            <TableRow key={index} className="hover:bg-muted/50">
-                                <TableCell className="font-medium text-secondary-foreground pl-0">{pred.label}</TableCell>
-                                <TableCell>{pred.value}</TableCell>
-                                <TableCell className="text-center font-semibold text-primary">{pred.odds}</TableCell>
-                                <TableCell className="flex justify-end pr-0">
-                                    {pred.bookmakerLogoUrl && (
-                                        <Image
-                                            src={pred.bookmakerLogoUrl}
-                                            alt={`${pred.bookmakerName} logo`}
-                                            width={80}
-                                            height={20}
-                                            className="object-contain"
-                                            data-ai-hint="bookmaker logo"
-                                        />
-                                    )}
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            )}
-          </div>
-        </div>
-      </>
-    );
-  };
-
-
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -181,13 +105,13 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
           </CardHeader>
           <CardContent className="pt-0">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 py-4">
-              <div className="w-full md:w-2/5 flex justify-center md:justify-start">
+              <div className="w-full md:w-2/5 flex justify-center">
                 <TeamDisplay team={match.team1} />
               </div>
               <div className="text-muted-foreground font-bold text-lg">
                 {labels.vs}
               </div>
-              <div className="w-full md:w-2/5 flex justify-center md:justify-end">
+              <div className="w-full md:w-2/5 flex justify-center">
                 <TeamDisplay team={match.team2} isReversedOnDesktop={true} />
               </div>
             </div>
@@ -198,9 +122,74 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
           </CardContent>
         </Card>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-2xl">
-        {renderDialogContent()}
-        <DialogFooter>
+      <DialogContent className="w-[95vw] rounded-lg sm:max-w-2xl max-h-[90vh]">
+        <DialogHeader className="pb-2">
+          <DialogTitle>{dialogLabels.title}</DialogTitle>
+          {match.details && (
+            <DialogDescription className="text-center sm:text-left pt-1">
+              {match.team1.name} vs {match.team2.name}
+            </DialogDescription>
+          )}
+        </DialogHeader>
+
+        <ScrollArea className="flex-1">
+          <div className="px-6 py-4">
+            {!match.details ? (
+              <p className="text-muted-foreground">{dialogLabels.noDetails}</p>
+            ) : (
+              <div className="grid gap-4">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">{match.details.stats.title}</h3>
+                  <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                    {match.details.stats.content.map((stat, index) => (
+                      <li key={index}>{stat}</li>
+                    ))}
+                  </ul>
+                </div>
+                <Separator />
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">{match.details.prediction.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{match.details.prediction.analysis}</p>
+                  {match.details.prediction.keyPredictions && match.details.prediction.keyPredictions.length > 0 && (
+                      <Table>
+                          <TableHeader>
+                              <TableRow className="hover:bg-transparent">
+                                  <TableHead className="pl-0">{dialogLabels.predictionColumn}</TableHead>
+                                  <TableHead>{dialogLabels.outcomeColumn}</TableHead>
+                                  <TableHead className="text-center">{dialogLabels.oddsColumn}</TableHead>
+                                  <TableHead className="text-right pr-0">{dialogLabels.bookmakerColumn}</TableHead>
+                              </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                              {match.details.prediction.keyPredictions.map((pred, index) => (
+                                  <TableRow key={index} className="hover:bg-muted/50">
+                                      <TableCell className="font-medium text-secondary-foreground pl-0">{pred.label}</TableCell>
+                                      <TableCell>{pred.value}</TableCell>
+                                      <TableCell className="text-center font-semibold text-primary">{pred.odds}</TableCell>
+                                      <TableCell className="flex justify-end pr-0">
+                                          {pred.bookmakerLogoUrl && (
+                                              <Image
+                                                  src={pred.bookmakerLogoUrl}
+                                                  alt={`${pred.bookmakerName} logo`}
+                                                  width={80}
+                                                  height={20}
+                                                  className="object-contain"
+                                                  data-ai-hint="bookmaker logo"
+                                              />
+                                          )}
+                                      </TableCell>
+                                  </TableRow>
+                              ))}
+                          </TableBody>
+                      </Table>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </ScrollArea>
+
+        <DialogFooter className="pt-2">
             <Button type="button" variant="secondary" asChild>
                <DialogTrigger>{dialogLabels.closeButton}</DialogTrigger>
             </Button>
