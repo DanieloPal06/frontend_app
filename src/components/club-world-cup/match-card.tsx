@@ -39,10 +39,11 @@ interface TeamDisplayProps {
 }
 
 function TeamDisplay({ team, isReversedOnDesktop = false }: TeamDisplayProps) {
-  const desktopFlexDirection = isReversedOnDesktop ? 'md:flex-row-reverse' : 'md:flex-row';
+  const desktopFlexDirection = isReversedOnDesktop ? 'md:flex-row-reverse md:justify-between' : 'md:flex-row md:justify-between';
+  const scoreOrder = isReversedOnDesktop ? 'md:order-first' : 'md:order-last';
 
   return (
-    <div className={`flex w-full flex-col items-center gap-2 text-center md:justify-between md:text-left ${desktopFlexDirection}`}>
+    <div className={`flex w-full flex-col items-center gap-2 text-center md:text-left ${desktopFlexDirection}`}>
       <div className='flex flex-col items-center gap-2 md:flex-row'>
         {team.logoUrl && (
           <Image
@@ -57,7 +58,7 @@ function TeamDisplay({ team, isReversedOnDesktop = false }: TeamDisplayProps) {
         <span className="font-semibold text-base md:text-lg group-hover:text-primary transition-colors">{team.name}</span>
       </div>
       {typeof team.score === 'number' && (
-        <span className="font-bold text-xl text-primary">{team.score}</span>
+        <span className={`font-bold text-xl text-primary ${scoreOrder}`}>{team.score}</span>
       )}
     </div>
   );
@@ -132,7 +133,7 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
           )}
         </DialogHeader>
 
-        <ScrollArea className="flex-1">
+        <ScrollArea className="flex-1 min-h-0">
           <div className="px-6 py-4">
             {!match.details ? (
               <p className="text-muted-foreground">{dialogLabels.noDetails}</p>
