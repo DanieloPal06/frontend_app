@@ -51,22 +51,8 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
       <div className="flex h-16 w-full items-center justify-between px-4 md:px-8">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           {/* Logo SVG */}
-          <svg
-            className="h-8 w-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 256 256"
-          >
-            <defs>
-              <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{ stopColor: 'hsl(var(--accent))' }} />
-                <stop offset="100%" style={{ stopColor: 'hsl(var(--primary))' }} />
-              </linearGradient>
-            </defs>
-            <path
-              fill="url(#logo-gradient)"
-              d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-48,48a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,140.69l42.34-42.35a8,8,0,0,1,11.32,11.32Z"
-            />
-          </svg>
+                    <img src="PredictPal.png" alt={commonContent.appName} className="h-8 w-auto" />
+          
           <h1 className="font-headline text-2xl font-bold">
             <span className="text-accent">Predict</span><span className="text-primary">Pal</span>
           </h1>

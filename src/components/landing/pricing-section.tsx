@@ -20,7 +20,7 @@ interface PricingSectionProps {
 
 export default function PricingSection({ content, commonContent }: PricingSectionProps) {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section id="academy" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-headline text-3xl font-bold text-foreground sm:text-4xl md:text-5xl animate-fadeInUp">
@@ -39,11 +39,6 @@ export default function PricingSection({ content, commonContent }: PricingSectio
               <CardContent className="flex-grow">
                 <CardDescription className="text-muted-foreground">{plan.description}</CardDescription>
               </CardContent>
-              <div className="p-6 pt-0 mt-auto">
-                <Button variant="outline" className="w-full font-semibold">
-                  {commonContent.learnMore}
-                </Button>
-              </div>
             </Card>
           ))}
         </div>
