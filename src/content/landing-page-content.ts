@@ -36,8 +36,8 @@ export const content: Record<Language, any> = {
     hero: {
       title: 'A "Bet"ter Way to Wager',
       subtitle: "PredictPal uses advanced neural networks to offer you match forecasts and betting strategies with unparalleled accuracy. Stop betting blind and start making data-driven decisions.",
-      ctaPrimary: "Get Your Forecasts Now",
-      ctaSecondary: "Start Your Free Trial",
+      ctaPrimary: "View Club World Cup",
+      ctaSecondary: "Explore the Academy",
     },
     problem: {
       title: "Tired of Losing Due to Lack of Reliable Information?",
@@ -178,8 +178,8 @@ export const content: Record<Language, any> = {
     hero: {
       title: "El futuro de tu apuesta, decidido en tiempo presente.",
       subtitle: "PredictPal utiliza redes neuronales avanzadas para ofrecerte pronósticos de partidos y estrategias de apuestas con una precisión inigualable. Deja de apostar a ciegas y empieza a tomar decisiones basadas en datos.",
-      ctaPrimary: "Obtén tus Pronósticos Ahora",
-      ctaSecondary: "Comienza tu Prueba Gratuita",
+      ctaPrimary: "Ver Mundial de Clubes",
+      ctaSecondary: "Explorar la Academia",
     },
     problem: {
       title: "¿Cansado de Perder por Falta de Información Fiable?",
