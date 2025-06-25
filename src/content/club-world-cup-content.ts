@@ -82,10 +82,18 @@ export const teams: Record<string, Team> = {
 
 type MatchStatus = 'SCHEDULED' | 'FINISHED' | 'LIVE' | 'POSTPONED';
 
+interface KeyPrediction {
+  label: string;
+  value: string;
+  odds: string;
+  bookmakerLogoUrl: string;
+  bookmakerName: string;
+}
+
 interface RawPrediction {
   title: string;
   analysis: string;
-  keyPredictions: { label: string; value: string }[];
+  keyPredictions: KeyPrediction[];
 }
 
 /**
@@ -205,11 +213,11 @@ const rawSchedule: RawDaySchedule[] = [
               title: "PredictPal's AI Analysis",
               analysis: "Borussia Dortmund is the clear favorite, but Ulsan's disciplined defense could pose a challenge. We predict a narrow victory for the German side, with chances for both teams to score.",
               keyPredictions: [
-                { label: "Match Winner", value: "Borussia Dortmund (75% probability)" },
-                { label: "Total Goals", value: "Over 2.5 (60% probability)" },
-                { label: "Total Corners", value: "Over 9.5 (70% probability)" },
-                { label: "Total Cards", value: "Under 4.5 (85% probability)" },
-                { label: "Both Teams to Score", value: "Yes (55% probability)" }
+                { label: "Match Winner", value: "B. Dortmund (75%)", odds: "1.50", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
+                { label: "Total Goals", value: "Over 2.5 (60%)", odds: "1.85", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Betway" },
+                { label: "Total Corners", value: "Over 9.5 (70%)", odds: "1.72", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "1xBet" },
+                { label: "Total Cards", value: "Under 4.5 (85%)", odds: "1.40", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
+                { label: "Both Teams to Score", value: "Yes (55%)", odds: "1.90", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Betway" }
               ]
             }
           },
@@ -226,11 +234,11 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Análisis de IA de PredictPal",
               analysis: "El Borussia Dortmund es el claro favorito, pero la defensa disciplinada de Ulsan podría presentar un desafío. Predecimos una victoria ajustada para el equipo alemán, con oportunidades de gol para ambos equipos.",
               keyPredictions: [
-                { label: "Ganador del Partido", value: "Borussia Dortmund (75% probabilidad)" },
-                { label: "Goles Totales", value: "Más de 2.5 (60% probabilidad)" },
-                { label: "Córners Totales", value: "Más de 9.5 (70% probabilidad)" },
-                { label: "Tarjetas Totales", value: "Menos de 4.5 (85% probabilidad)" },
-                { label: "Ambos Equipos Anotan", value: "Sí (55% probabilidad)" }
+                { label: "Ganador del Partido", value: "B. Dortmund (75%)", odds: "1.50", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
+                { label: "Goles Totales", value: "Más de 2.5 (60%)", odds: "1.85", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Betway" },
+                { label: "Córners Totales", value: "Más de 9.5 (70%)", odds: "1.72", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "1xBet" },
+                { label: "Tarjetas Totales", value: "Menos de 4.5 (85%)", odds: "1.40", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
+                { label: "Ambos Equipos Anotan", value: "Sí (55%)", odds: "1.90", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Betway" }
               ]
             }
           }
@@ -266,7 +274,7 @@ export interface Match {
     prediction: {
       title: string;
       analysis: string;
-      keyPredictions: { label: string; value: string }[];
+      keyPredictions: KeyPrediction[];
     };
   };
 }
@@ -298,6 +306,10 @@ export interface ClubWorldCupPageContent {
     predictionTitle: string;
     closeButton: string;
     noDetails: string;
+    predictionColumn: string;
+    outcomeColumn: string;
+    oddsColumn: string;
+    bookmakerColumn: string;
   };
   dayLabels: Record<string, string>;
   schedule: DaySchedule[];
@@ -361,6 +373,10 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
       predictionTitle: "Prediction & Analysis",
       closeButton: "Close",
       noDetails: "Match details are not yet available.",
+      predictionColumn: "Prediction",
+      outcomeColumn: "Outcome",
+      oddsColumn: "Odds",
+      bookmakerColumn: "Bookmaker",
     },
     dayLabels: {
       day1: "June 14, 2025",
@@ -390,6 +406,10 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
       predictionTitle: "Predicción y Análisis",
       closeButton: "Cerrar",
       noDetails: "Los detalles del partido aún no están disponibles.",
+      predictionColumn: "Predicción",
+      outcomeColumn: "Resultado",
+      oddsColumn: "Cuotas",
+      bookmakerColumn: "Casa de Apuestas",
     },
     dayLabels: {
       day1: "14 de Junio, 2025",

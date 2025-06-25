@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from '@/components/ui/separator';
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 interface MatchCardProps {
   match: Match;
@@ -25,6 +25,10 @@ interface MatchCardProps {
     predictionTitle: string;
     closeButton: string;
     noDetails: string;
+    predictionColumn: string;
+    outcomeColumn: string;
+    oddsColumn: string;
+    bookmakerColumn: string;
   };
 }
 
@@ -114,11 +118,32 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
             <p className="text-sm text-muted-foreground mb-4">{prediction.analysis}</p>
             {prediction.keyPredictions && prediction.keyPredictions.length > 0 && (
                 <Table>
+                    <TableHeader>
+                        <TableRow className="hover:bg-transparent">
+                            <TableHead className="pl-0">{dialogLabels.predictionColumn}</TableHead>
+                            <TableHead>{dialogLabels.outcomeColumn}</TableHead>
+                            <TableHead className="text-center">{dialogLabels.oddsColumn}</TableHead>
+                            <TableHead className="text-right pr-0">{dialogLabels.bookmakerColumn}</TableHead>
+                        </TableRow>
+                    </TableHeader>
                     <TableBody>
                         {prediction.keyPredictions.map((pred, index) => (
                             <TableRow key={index} className="hover:bg-muted/50">
-                                <TableCell className="font-medium text-secondary-foreground">{pred.label}</TableCell>
-                                <TableCell className="text-right font-semibold text-primary">{pred.value}</TableCell>
+                                <TableCell className="font-medium text-secondary-foreground pl-0">{pred.label}</TableCell>
+                                <TableCell>{pred.value}</TableCell>
+                                <TableCell className="text-center font-semibold text-primary">{pred.odds}</TableCell>
+                                <TableCell className="flex justify-end pr-0">
+                                    {pred.bookmakerLogoUrl && (
+                                        <Image
+                                            src={pred.bookmakerLogoUrl}
+                                            alt={`${pred.bookmakerName} logo`}
+                                            width={80}
+                                            height={20}
+                                            className="object-contain"
+                                            data-ai-hint="bookmaker logo"
+                                        />
+                                    )}
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
@@ -164,7 +189,7 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
           </CardContent>
         </Card>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-2xl">
         {renderDialogContent()}
         <DialogFooter>
             <Button type="button" variant="secondary" asChild>
