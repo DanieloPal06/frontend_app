@@ -1,9 +1,11 @@
 
 import Image from 'next/image';
-import type { Match, MatchTeam } from '@/content/club-world-cup-content';
+import type { Match } from '@/content/club-world-cup-content';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from '@/components/ui/separator';
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 
 interface MatchCardProps {
   match: Match;
@@ -16,9 +18,16 @@ interface MatchCardProps {
     time: string;
     vs: string;
   };
+  dialogLabels: {
+    title: string;
+    statsTitle: string;
+    predictionTitle: string;
+    closeButton: string;
+    noDetails: string;
+  };
 }
 
-function TeamDisplay({ team, vsLabel }: { team: MatchTeam; vsLabel?: string }) {
+function TeamDisplay({ team, vsLabel }: { team: NonNullable<Match['team1']>; vsLabel?: string }) {
   return (
     <div className="flex flex-col items-center text-center md:flex-row md:text-left gap-2">
       {team.logoUrl && (
@@ -39,14 +48,13 @@ function TeamDisplay({ team, vsLabel }: { team: MatchTeam; vsLabel?: string }) {
   );
 }
 
-
-export function MatchCard({ match, labels }: MatchCardProps) {
+export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
   const getStatusBadgeVariant = (status: Match['status']): React.ComponentProps<typeof Badge>['variant'] => {
     switch (status) {
       case 'SCHEDULED':
         return 'secondary';
       case 'LIVE':
-        return 'default'; // Consider a specific 'live' variant if primary isn't green-ish
+        return 'default';
       case 'FINISHED':
         return 'outline';
       case 'POSTPONED':
@@ -66,35 +74,91 @@ export function MatchCard({ match, labels }: MatchCardProps) {
     }
   }
 
+  const renderDialogContent = () => {
+    if (!match.details) {
+      return (
+        <>
+          <DialogHeader>
+            <DialogTitle>{dialogLabels.title}</DialogTitle>
+          </DialogHeader>
+          <div className="py-4">
+            <p className="text-muted-foreground">{dialogLabels.noDetails}</p>
+          </div>
+        </>
+      );
+    }
+
+    const { stats, prediction } = match.details;
+
+    return (
+      <>
+        <DialogHeader>
+          <DialogTitle>{dialogLabels.title}</DialogTitle>
+          <DialogDescription className="text-center sm:text-left pt-1">
+            {match.team1.name} vs {match.team2.name}
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <div>
+            <h3 className="text-lg font-semibold mb-2">{stats.title}</h3>
+            <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+              {stats.content.map((stat, index) => (
+                <li key={index}>{stat}</li>
+              ))}
+            </ul>
+          </div>
+          <Separator />
+          <div>
+            <h3 className="text-lg font-semibold mb-2">{prediction.title}</h3>
+            <p className="text-muted-foreground whitespace-pre-wrap">{prediction.content}</p>
+          </div>
+        </div>
+      </>
+    );
+  };
+
+
   return (
-    <Card className="w-full shadow-md hover:shadow-lg transition-shadow duration-300 group animate-fadeInUp">
-      <CardHeader className="pb-3">
-        <div className="flex justify-between items-center">
-          <CardTitle className="text-sm font-medium text-muted-foreground">
-            {labels.time}: {match.time}
-          </CardTitle>
-          <Badge variant={getStatusBadgeVariant(match.status)} className="text-xs">
-            {getStatusLabel(match.status)}
-          </Badge>
-        </div>
-      </CardHeader>
-      <CardContent className="pt-0">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 py-4">
-          <div className="w-full md:w-2/5">
-            <TeamDisplay team={match.team1} />
-          </div>
-          <div className="text-muted-foreground font-bold text-lg hidden md:block">
-            {labels.vs}
-          </div>
-           <div className="w-full md:w-2/5 flex md:justify-end">
-            <TeamDisplay team={match.team2} />
-          </div>
-        </div>
-        <Separator className="my-3" />
-        <CardDescription className="text-xs text-muted-foreground text-center md:text-right">
-          {labels.venue}: {match.venue}
-        </CardDescription>
-      </CardContent>
-    </Card>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Card className="w-full shadow-md hover:shadow-lg transition-shadow duration-300 group animate-fadeInUp cursor-pointer">
+          <CardHeader className="pb-3">
+            <div className="flex justify-between items-center">
+              <CardTitle className="text-sm font-medium text-muted-foreground">
+                {labels.time}: {match.time}
+              </CardTitle>
+              <Badge variant={getStatusBadgeVariant(match.status)} className="text-xs">
+                {getStatusLabel(match.status)}
+              </Badge>
+            </div>
+          </CardHeader>
+          <CardContent className="pt-0">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 py-4">
+              <div className="w-full md:w-2/5">
+                <TeamDisplay team={match.team1} />
+              </div>
+              <div className="text-muted-foreground font-bold text-lg hidden md:block">
+                {labels.vs}
+              </div>
+              <div className="w-full md:w-2/5 flex md:justify-end">
+                <TeamDisplay team={match.team2} />
+              </div>
+            </div>
+            <Separator className="my-3" />
+            <CardDescription className="text-xs text-muted-foreground text-center md:text-right">
+              {labels.venue}: {match.venue}
+            </CardDescription>
+          </CardContent>
+        </Card>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-md">
+        {renderDialogContent()}
+        <DialogFooter>
+            <Button type="button" variant="secondary" asChild>
+               <DialogTrigger>{dialogLabels.closeButton}</DialogTrigger>
+            </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }

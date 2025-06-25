@@ -74,14 +74,13 @@ export const teams: Record<string, Team> = {
   RBS: { id: 'RBS', group: 'H', name: { en: 'RB Salzburg', es: 'RB Salzburgo' }, logoUrl: '' },
   PAC: { id: 'PAC', group: 'H', name: { en: 'Pachuca', es: 'Pachuca' }, logoUrl: '' },
   HIL: { id: 'HIL', group: 'H', name: { en: 'Al-Hilal', es: 'Al-Hilal' }, logoUrl: '' },
-
-  
-  
 };
 
 // =================================================================
 // 2. RAW SCHEDULE DATA (Using Team IDs)
 // =================================================================
+
+type MatchStatus = 'SCHEDULED' | 'FINISHED' | 'LIVE' | 'POSTPONED';
 
 /**
  * Raw structure for a match, using IDs to reference teams.
@@ -97,7 +96,17 @@ interface RawMatch {
     en: string;
     es: string;
   };
-  status: 'SCHEDULED' | 'FINISHED';
+  status: MatchStatus;
+  details?: {
+    en: {
+      stats: { title: string; content: string[] };
+      prediction: { title: string; content: string };
+    };
+    es: {
+      stats: { title: string; content: string[] };
+      prediction: { title: string; content: string };
+    };
+  };
 }
 
 interface RawDaySchedule {
@@ -115,7 +124,38 @@ const rawSchedule: RawDaySchedule[] = [
     dateISO: "2025-06-14",
     dayLabelKey: "day1",
     matches: [
-      { id: "CWC-2025-01", time: "19:00 COT", team1Id: "ALA", score1: 0, team2Id: "MIA", score2: 0, venue: { en: "HARD ROCK STADIUM, Miami", es: "Hard Rock Stadium, Miami" }, status: "FINISHED" },
+      { 
+        id: "CWC-2025-01", 
+        time: "19:00 COT", 
+        team1Id: "ALA", 
+        score1: 0, 
+        team2Id: "MIA", 
+        score2: 0, 
+        venue: { en: "HARD ROCK STADIUM, Miami", es: "Hard Rock Stadium, Miami" }, 
+        status: "FINISHED",
+        details: {
+          en: {
+            stats: {
+              title: "Key Statistics",
+              content: ["Possession: Al Ahly 45% - Inter Miami 55%", "Shots on Target: Al Ahly 2 - Inter Miami 5", "Corners: Al Ahly 3 - Inter Miami 6"]
+            },
+            prediction: {
+              title: "Match Analysis",
+              content: "Inter Miami was predicted to have a slight edge due to home advantage and recent form, but Al Ahly's defense proved resilient, leading to a hard-fought draw."
+            }
+          },
+          es: {
+            stats: {
+              title: "Estadísticas Clave",
+              content: ["Posesión: Al Ahly 45% - Inter Miami 55%", "Tiros a Puerta: Al Ahly 2 - Inter Miami 5", "Córners: Al Ahly 3 - Inter Miami 6"]
+            },
+            prediction: {
+              title: "Análisis del Partido",
+              content: "Se predijo que Inter Miami tenía una ligera ventaja por jugar en casa y su forma reciente, pero la defensa de Al Ahly demostró ser resiliente, lo que llevó a un reñido empate."
+            }
+          }
+        }
+      },
     ]
   },
   // Day 2
@@ -159,7 +199,11 @@ export interface Match {
   team1: MatchTeam;
   team2: MatchTeam;
   venue: string;
-  status: 'SCHEDULED' | 'FINISHED';
+  status: MatchStatus;
+  details?: {
+    stats: { title: string; content: string[] };
+    prediction: { title: string; content: string };
+  };
 }
 
 export interface DaySchedule {
@@ -176,10 +220,19 @@ export interface ClubWorldCupPageContent {
   noMatchesMessage: string;
   matchCard: {
     scheduled: string;
+    live: string;
     finished: string;
+    postponed: string;
     venue: string;
     time: string;
     vs: string;
+  };
+  dialog: {
+    title: string;
+    statsTitle: string;
+    predictionTitle: string;
+    closeButton: string;
+    noDetails: string;
   };
   dayLabels: Record<string, string>;
   schedule: DaySchedule[];
@@ -212,6 +265,7 @@ const generateScheduleForLanguage = (lang: Language): DaySchedule[] => {
           logoUrl: team2.logoUrl,
           score: rawMatch.score2,
         },
+        details: rawMatch.details ? rawMatch.details[lang] : undefined,
       };
     }),
   }));
@@ -229,14 +283,24 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
     noMatchesMessage: "No matches scheduled for this day.",
     matchCard: {
       scheduled: "Scheduled",
+      live: "Live",
       finished: "Finished",
+      postponed: "Postponed",
       venue: "Venue",
       time: "Time",
       vs: "VS",
     },
+    dialog: {
+      title: "Match Details",
+      statsTitle: "Statistics",
+      predictionTitle: "Prediction & Analysis",
+      closeButton: "Close",
+      noDetails: "Match details are not yet available.",
+    },
     dayLabels: {
-      day1: "June 15, 2025",
-      day2: "June 16, 2025",
+      day1: "June 14, 2025",
+      day2: "June 15, 2025",
+      day12: "June 25, 2025",
     },
     schedule: generateScheduleForLanguage('en'),
   },
@@ -248,14 +312,24 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
     noMatchesMessage: "No hay partidos programados para este día.",
     matchCard: {
       scheduled: "Programado",
+      live: "En Vivo",
       finished: "Finalizado",
+      postponed: "Pospuesto",
       venue: "Estadio",
       time: "Hora",
       vs: "VS",
     },
+    dialog: {
+      title: "Detalles del Partido",
+      statsTitle: "Estadísticas",
+      predictionTitle: "Predicción y Análisis",
+      closeButton: "Cerrar",
+      noDetails: "Los detalles del partido aún no están disponibles.",
+    },
     dayLabels: {
-      day1: "15 de Junio, 2025",
-      day2: "16 de Junio, 2025",
+      day1: "14 de Junio, 2025",
+      day2: "15 de Junio, 2025",
+      day12: "25 de Junio, 2025",
     },
     schedule: generateScheduleForLanguage('es'),
   },

@@ -98,7 +98,7 @@ export function MatchSchedule({ content }: MatchScheduleProps) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {day.matches.map((match, matchIndex) => (
                   <div key={match.id} style={{ animationDelay: `${0.1 + matchIndex * 0.05}s` }}>
-                    <MatchCard match={match} labels={content.matchCard} />
+                    <MatchCard match={match} labels={content.matchCard} dialogLabels={content.dialog} />
                   </div>
                 ))}
               </div>
