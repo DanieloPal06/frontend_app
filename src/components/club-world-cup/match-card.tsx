@@ -175,10 +175,10 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
               <div className="w-full md:w-2/5">
                 <TeamDisplay team={match.team1} />
               </div>
-              <div className="text-muted-foreground font-bold text-lg hidden md:block">
+              <div className="text-muted-foreground font-bold text-lg">
                 {labels.vs}
               </div>
-              <div className="w-full md:w-2/5 flex md:justify-end">
+              <div className="w-full md:w-2/5 flex justify-center md:justify-end">
                 <TeamDisplay team={match.team2} />
               </div>
             </div>
