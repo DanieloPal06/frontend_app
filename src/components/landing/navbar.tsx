@@ -40,10 +40,10 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
   };
 
   const navItems = [
-    { label: navContent.home, href: "/#home" },
-    { label: navContent.mundialDeClubes, href: "/club-world-cup" },
-    { label: navContent.academy, href: "/#academy" },
-    { label: navContent.donations, href: "/donations" },
+    { label: navContent.home, href: "/#home", isExternal: false },
+    { label: navContent.mundialDeClubes, href: "/club-world-cup", isExternal: false },
+    { label: navContent.academy, href: "https://academy.predictpal.co", isExternal: true },
+    { label: navContent.donations, href: "/donations", isExternal: false },
   ];
 
   return (
@@ -63,9 +63,11 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
             <Link
               key={item.label}
               href={item.href}
+              target={item.isExternal ? "_blank" : undefined}
+              rel={item.isExternal ? "noopener noreferrer" : undefined}
               className="transition-colors hover:text-primary"
               onClick={(e) => { 
-                if (item.href.startsWith("/#") && item.href !== "/#") {
+                if (!item.isExternal && item.href.startsWith("/#") && item.href !== "/#") {
                   if (window.location.pathname === '/') {
                     const elementId = item.href.substring(2); 
                     const element = document.getElementById(elementId);
@@ -74,7 +76,7 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
                       element.scrollIntoView({ behavior: 'smooth' });
                     }
                   }
-                } else if (item.href === "#" || item.href === "/#") {
+                } else if (!item.isExternal && (item.href === "#" || item.href === "/#")) {
                     e.preventDefault(); 
                 }
               }}
@@ -126,9 +128,11 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
               <Link
                 key={item.label}
                 href={item.href}
+                target={item.isExternal ? "_blank" : undefined}
+                rel={item.isExternal ? "noopener noreferrer" : undefined}
                 className="block w-full text-center py-3 px-4 transition-colors hover:text-primary hover:bg-muted"
                 onClick={(e) => {
-                  if (item.href.startsWith("/#") && item.href !== "/#") {
+                  if (!item.isExternal && item.href.startsWith("/#") && item.href !== "/#") {
                      if (window.location.pathname === '/') {
                         const elementId = item.href.substring(2);
                         const element = document.getElementById(elementId);
@@ -137,7 +141,7 @@ export default function Navbar({ language, setLanguage, navContent, commonConten
                           element.scrollIntoView({ behavior: 'smooth' });
                         }
                      }
-                  } else if (item.href === "#" || item.href === "/#") {
+                  } else if (!item.isExternal && (item.href === "#" || item.href === "/#")) {
                       e.preventDefault();
                   }
                   setMobileMenuOpen(false); 

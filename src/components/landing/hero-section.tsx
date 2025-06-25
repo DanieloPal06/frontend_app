@@ -23,7 +23,7 @@ export default function HeroSection({ content }: HeroSectionProps) {
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-y-4 sm:flex-row sm:gap-x-6 sm:gap-y-0 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
             <Button variant="accent" size="lg" className="font-semibold w-full sm:w-auto" asChild>
-              <Link href="/#academy">{content.ctaSecondary}</Link>
+              <Link href="https://academy.predictpal.co" target="_blank" rel="noopener noreferrer">{content.ctaSecondary}</Link>
             </Button>
             <Button size="lg" className="font-semibold w-full sm:w-auto" asChild>
               <Link href="/club-world-cup">{content.ctaPrimary}</Link>
