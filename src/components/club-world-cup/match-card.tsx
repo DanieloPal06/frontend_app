@@ -34,20 +34,22 @@ interface MatchCardProps {
 
 function TeamDisplay({ team, vsLabel }: { team: NonNullable<Match['team1']>; vsLabel?: string }) {
   return (
-    <div className="flex flex-col items-center text-center md:flex-row md:text-left gap-2">
-      {team.logoUrl && (
-        <Image
-          src={team.logoUrl}
-          alt={`${team.name} logo`}
-          width={40}
-          height={40}
-          className="rounded-full object-contain"
-          data-ai-hint="club logo"
-        />
-      )}
-      <span className="font-semibold text-base md:text-lg group-hover:text-primary transition-colors">{team.name}</span>
+    <div className="flex flex-col items-center text-center md:flex-row md:text-left gap-2 w-full">
+      <div className='flex items-center gap-2'>
+        {team.logoUrl && (
+          <Image
+            src={team.logoUrl}
+            alt={`${team.name} logo`}
+            width={40}
+            height={40}
+            className="rounded-full object-contain"
+            data-ai-hint="club logo"
+          />
+        )}
+        <span className="font-semibold text-base md:text-lg group-hover:text-primary transition-colors">{team.name}</span>
+      </div>
       {typeof team.score === 'number' && (
-        <span className="font-bold text-xl text-primary ml-auto md:ml-2">{team.score}</span>
+        <span className="font-bold text-xl text-primary ml-auto">{team.score}</span>
       )}
     </div>
   );
@@ -172,13 +174,13 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
           </CardHeader>
           <CardContent className="pt-0">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 py-4">
-              <div className="w-full md:w-2/5">
+              <div className="w-full md:w-2/5 flex justify-center md:justify-start">
                 <TeamDisplay team={match.team1} />
               </div>
               <div className="text-muted-foreground font-bold text-lg">
                 {labels.vs}
               </div>
-              <div className="w-full md:w-2/5 flex justify-center md:justify-end">
+              <div className="w-full md:w-2/5 flex justify-center md:justify-start flex-row-reverse md:flex-row">
                 <TeamDisplay team={match.team2} />
               </div>
             </div>
