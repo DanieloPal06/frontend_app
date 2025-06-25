@@ -34,7 +34,7 @@ export const content: Record<Language, any> = {
       donations: "Donations", 
     },
     hero: {
-      title: "Transform Your Table Tennis Betting with Cutting-Edge Predictive Analysis.",
+      title: 'A "Bet"ter Way to Wager',
       subtitle: "PredictPal uses advanced neural networks to offer you match forecasts and betting strategies with unparalleled accuracy. Stop betting blind and start making data-driven decisions.",
       ctaPrimary: "Get Your Forecasts Now",
       ctaSecondary: "Start Your Free Trial",
@@ -176,7 +176,7 @@ export const content: Record<Language, any> = {
       donations: "Donaciones", 
     },
     hero: {
-      title: "Transforma tus Apuestas de Tenis de Mesa con Análisis Predictivo de Vanguardia.",
+      title: "El futuro de tu apuesta, decidido en tiempo presente.",
       subtitle: "PredictPal utiliza redes neuronales avanzadas para ofrecerte pronósticos de partidos y estrategias de apuestas con una precisión inigualable. Deja de apostar a ciegas y empieza a tomar decisiones basadas en datos.",
       ctaPrimary: "Obtén tus Pronósticos Ahora",
       ctaSecondary: "Comienza tu Prueba Gratuita",

@@ -70,9 +70,9 @@ export default function ClubWorldCupPage() {
         commonContent={currentLandingContent.common}
       />
       <main id="club-world-cup-container" className="flex-grow container mx-auto px-4 py-8 md:px-6 md:py-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 animate-fadeInUp text-primary">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 animate-fadeInUp text-primary">
           {currentClubWorldCupContent.pageTitle}
-        </h1>
+        </h2>
         <MatchSchedule content={currentClubWorldCupContent} />
       </main>
       <Footer content={currentLandingContent.footer} />

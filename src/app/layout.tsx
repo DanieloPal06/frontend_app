@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: 'PredictPal - Table Tennis Predictions',
-  description: 'Transform Your Table Tennis Betting with Cutting-Edge Predictive Analysis.',
+  description: 'A "Bet"ter Way to Wager',
 };
 
 export default function RootLayout({
