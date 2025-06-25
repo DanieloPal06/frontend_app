@@ -389,7 +389,7 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
     metaTitle: "Partidos Mundial de Clubes 2025 | PredictPal",
     metaDescription: "Sigue los partidos, horarios y resultados del Mundial de Clubes 2025.",
     pageTitle: "Calendario Mundial de Clubes 2025",
-    selectDayPrompt: "Selecciona un día para ver los partidos:",
+    selectDayPrompt: "Selecciona un día para ver los partidos: ",
     noMatchesMessage: "No hay partidos programados para este día.",
     matchCard: {
       scheduled: "Programado",
