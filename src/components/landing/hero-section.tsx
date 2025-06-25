@@ -22,11 +22,11 @@ export default function HeroSection({ content }: HeroSectionProps) {
             {content.subtitle}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-y-4 sm:flex-row sm:gap-x-6 sm:gap-y-0 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
-            <Button size="lg" className="font-semibold w-full sm:w-auto" asChild>
-              <Link href="/club-world-cup">{content.ctaPrimary}</Link>
-            </Button>
             <Button variant="outline" size="lg" className="font-semibold w-full sm:w-auto" asChild>
               <Link href="/#academy">{content.ctaSecondary}</Link>
+            </Button>
+            <Button size="lg" className="font-semibold w-full sm:w-auto" asChild>
+              <Link href="/club-world-cup">{content.ctaPrimary}</Link>
             </Button>
           </div>
         </div>
