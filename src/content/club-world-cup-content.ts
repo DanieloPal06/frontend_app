@@ -213,7 +213,7 @@ const rawSchedule: RawDaySchedule[] = [
               title: "PredictPal's AI Analysis",
               analysis: "Borussia Dortmund is the clear favorite, but Ulsan's disciplined defense could pose a challenge. We predict a narrow victory for the German side, with chances for both teams to score.",
               keyPredictions: [
-                { label: "Match Winner", value: "B. Dortmund (75%)", odds: "1.50", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
+                { label: "Match Winner", value: "B. Dortmund (70%)", odds: "1.50", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
                 { label: "Total Goals", value: "Over 2.5 (60%)", odds: "1.85", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Betway" },
                 { label: "Total Corners", value: "Over 9.5 (70%)", odds: "1.72", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "1xBet" },
                 { label: "Total Cards", value: "Under 4.5 (85%)", odds: "1.40", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
