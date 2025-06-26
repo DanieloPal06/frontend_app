@@ -204,6 +204,221 @@ const rawSchedule: RawDaySchedule[] = [
       { id: "CWC-2025-17", time: "20:00 COT", team1Id: "INT", score1: 2, team2Id: "RIV", score2: 0, venue: { en: "Lumen Field, Seattle, USA", es: "Lumen Field, Seattle, USA" }, status: "SCHEDULED" },
       { id: "CWC-2025-18", time: "20:00 COT", team1Id: "URA", score1: 0, team2Id: "MON", score2: 4, venue: { en: "Rose Bowl Stadium, Pasadena", es: "Rose Bowl, Pasadena" }, status: "SCHEDULED" },
     ]
+  },
+  // Day 4
+  {
+    dateISO: "2025-06-26",
+    dayLabelKey: "day13",
+    matches: [
+      {
+        id: "CWC-2025-19",
+        time: "14:00 COT",
+        team1Id: "JUV",
+        team2Id: "MCI",
+        score1: null,
+        score2: null,
+        venue: { en: "Camping World Stadium, Orlando", es: "Camping World Stadium, Orlando" },
+        status: "SCHEDULED",
+        details: {
+          en: {
+            stats: {
+              title: "Key Statistics (Last 2 CWC Matches)",
+              content: [
+                "Avg. Goals Scored: Juventus 4.5 - Man City 4.0",
+                "Avg. Goals Conceded: Juventus 0.5 - Man City 0.0",
+                "Avg. Possession: Juventus 62% - Man City 71%",
+                "Total Corners: Juventus 10 - Man City 18"
+              ]
+            },
+            prediction: {
+              title: "Expert Analysis",
+              analysis: "A tactical battle for the top spot in Group G. Man City's perfect defensive record (0 goals conceded) clashes with Juventus's historical dominance in this fixture. A draw secures the top spot for Juventus, forcing City to attack. While the AI predicts a Juventus win, City's current form and territorial dominance give them a slight edge. Expect a tight match where both potent attacks find the net.",
+              keyPredictions: [
+                { label: "Both Teams to Score", value: "Yes", odds: "1.75", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Total Corners", value: "Over 9.5", odds: "1.80", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Match Result", value: "Draw or Man City", odds: "1.50", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+              ]
+            }
+          },
+          es: {
+            stats: {
+              title: "Estadísticas Clave (Últimos 2 Partidos CWC)",
+              content: [
+                "Prom. Goles Anotados: Juventus 4.5 - Man City 4.0",
+                "Prom. Goles Recibidos: Juventus 0.5 - Man City 0.0",
+                "Prom. Posesión: Juventus 62% - Man City 71%",
+                "Córners Totales: Juventus 10 - Man City 18"
+              ]
+            },
+            prediction: {
+              title: "Análisis Experto",
+              analysis: "Una batalla táctica por el primer puesto del Grupo G. El récord defensivo perfecto del Man City (0 goles en contra) choca con el dominio histórico de la Juventus en este enfrentamiento. Un empate asegura el primer puesto para la Juventus, obligando al City a atacar. Aunque la IA predice una victoria de la Juventus, la forma actual del City y su dominio territorial les dan una ligera ventaja. Se espera un partido reñido en el que ambos potentes ataques encuentren la red.",
+              keyPredictions: [
+                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.75", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Total de Córners", value: "Más de 9.5", odds: "1.80", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Resultado del Partido", value: "Empate o Man City", odds: "1.50", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: "CWC-2025-20",
+        time: "14:00 COT",
+        team1Id: "WYD",
+        team2Id: "AIN",
+        score1: null,
+        score2: null,
+        venue: { en: "Audi Field, Washington, D.C.", es: "Audi Field, Washington, D.C." },
+        status: "SCHEDULED",
+        details: {
+          en: {
+            stats: {
+              title: "Key Statistics (Last 2 CWC Matches)",
+              content: [
+                "Avg. Goals Scored: WAC 0.5 - Al-Ain 0.0",
+                "Avg. Goals Conceded: WAC 3.0 - Al-Ain 5.5",
+                "Total Shots: WAC 27 - Al-Ain 14",
+                "Total Corners: WAC 9 - Al-Ain 4"
+              ]
+            },
+            prediction: {
+              title: "Expert Analysis",
+              analysis: "A match for pride between two eliminated teams. Al-Ain's attack has been completely ineffective, failing to score a single goal and generating a very low xG. WAC, while also struggling, has shown slightly more offensive capability. The statistical evidence strongly suggests a low-scoring affair, with WAC as the logical, albeit uninspiring, favorite.",
+              keyPredictions: [
+                { label: "Both Teams to Score", value: "No", odds: "1.90", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Match Winner", value: "Wydad Casablanca", odds: "2.40", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Total Goals", value: "Under 2.5", odds: "1.85", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+              ]
+            }
+          },
+          es: {
+            stats: {
+              title: "Estadísticas Clave (Últimos 2 Partidos CWC)",
+              content: [
+                "Prom. Goles Anotados: WAC 0.5 - Al-Ain 0.0",
+                "Prom. Goles Recibidos: WAC 3.0 - Al-Ain 5.5",
+                "Tiros Totales: WAC 27 - Al-Ain 14",
+                "Córners Totales: WAC 9 - Al-Ain 4"
+              ]
+            },
+            prediction: {
+              title: "Análisis Experto",
+              analysis: "Un partido por el orgullo entre dos equipos ya eliminados. El ataque de Al-Ain ha sido completamente ineficaz, sin marcar un solo gol y generando un xG muy bajo. El WAC, aunque también con dificultades, ha mostrado una capacidad ofensiva ligeramente mayor. La evidencia estadística sugiere fuertemente un partido de pocos goles, con el WAC como favorito lógico, aunque poco inspirador.",
+              keyPredictions: [
+                { label: "Ambos Equipos Marcarán", value: "No", odds: "1.90", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Ganador del Partido", value: "Wydad Casablanca", odds: "2.40", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Total de Goles", value: "Menos de 2.5", odds: "1.85", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: "CWC-2025-21",
+        time: "20:00 COT",
+        team1Id: "RBS",
+        team2Id: "RMA",
+        score1: null,
+        score2: null,
+        venue: { en: "Lincoln Financial Field, Philadelphia", es: "Lincoln Financial Field, Filadelfia" },
+        status: "SCHEDULED",
+        details: {
+          en: {
+            stats: {
+              title: "Key Statistics (Last 2 CWC Matches)",
+              content: [
+                "Avg. Goals Scored: RB Salzburg 1.0 - Real Madrid 2.0",
+                "Avg. Goals Conceded: RB Salzburg 0.5 - Real Madrid 1.0",
+                "Total Shots Conceded: RB Salzburg 30 - Real Madrid 38",
+                "Total Corners: RB Salzburg 8 - Real Madrid 7"
+              ]
+            },
+            prediction: {
+              title: "Expert Analysis",
+              analysis: "A high-stakes match for qualification. Real Madrid only needs a draw, while Salzburg likely needs a win. Madrid's attack is potent, but their defense has been alarmingly porous, conceding 38 shots in two games. This defensive fragility, coupled with Salzburg's need to push forward, makes a 'Both Teams to Score' prediction very strong. The AI's pick of a Madrid win seems to overlook these critical defensive issues.",
+              keyPredictions: [
+                { label: "Both Teams to Score", value: "Yes", odds: "1.70", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Match Result", value: "Draw", odds: "4.90", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Total Goals", value: "Over 2.5", odds: "1.76", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+              ]
+            }
+          },
+          es: {
+            stats: {
+              title: "Estadísticas Clave (Últimos 2 Partidos CWC)",
+              content: [
+                "Prom. Goles Anotados: RB Salzburg 1.0 - Real Madrid 2.0",
+                "Prom. Goles Recibidos: RB Salzburg 0.5 - Real Madrid 1.0",
+                "Tiros Totales Concedidos: RB Salzburg 30 - Real Madrid 38",
+                "Córners Totales: RB Salzburg 8 - Real Madrid 7"
+              ]
+            },
+            prediction: {
+              title: "Análisis Experto",
+              analysis: "Un partido de alto riesgo para la clasificación. Al Real Madrid le basta un empate, mientras que el Salzburgo probablemente necesite una victoria. El ataque del Madrid es potente, pero su defensa ha sido alarmantemente porosa, concediendo 38 tiros en dos partidos. Esta fragilidad defensiva, unida a la necesidad del Salzburgo de atacar, hace que la predicción de 'Ambos Equipos Marcarán' sea muy sólida. La elección de la IA de una victoria del Madrid parece pasar por alto estos problemas defensivos críticos.",
+              keyPredictions: [
+                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.70", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Resultado del Partido", value: "Empate", odds: "4.90", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Total de Goles", value: "Más de 2.5", odds: "1.76", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: "CWC-2025-22",
+        time: "20:00 COT",
+        team1Id: "HIL",
+        team2Id: "PAC",
+        score1: null,
+        score2: null,
+        venue: { en: "Geodis Park, Nashville", es: "Geodis Park, Nashville" },
+        status: "SCHEDULED",
+        details: {
+          en: {
+            stats: {
+              title: "Key Statistics (Last 2 CWC Matches)",
+              content: [
+                "Avg. Goals Scored: Al-Hilal 0.5 - Pachuca 1.0",
+                "Avg. Possession: Al-Hilal 51.5% - Pachuca 45.5%",
+                "Total Corners: Al-Hilal 17 - Pachuca 15",
+                "Total Shots: Al-Hilal 32 - Pachuca 42"
+              ]
+            },
+            prediction: {
+              title: "Expert Analysis",
+              analysis: "A fascinating clash of motivations. Al-Hilal must win to have any chance of advancing, while Pachuca is eliminated but playing for pride. Al-Hilal has controlled possession but struggled to score without Mitrović. Pachuca's high-volume, chaotic shooting style has produced goals in both games. The tactical profiles of both teams strongly suggest a high number of corners, making the AI's prediction of 10 a significant underestimation.",
+              keyPredictions: [
+                { label: "Total Corners", value: "Over 11.5", odds: "1.95", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Both Teams to Score", value: "Yes", odds: "1.65", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Match Winner", value: "Al-Hilal", odds: "1.62", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+              ]
+            }
+          },
+          es: {
+            stats: {
+              title: "Estadísticas Clave (Últimos 2 Partidos CWC)",
+              content: [
+                "Prom. Goles Anotados: Al-Hilal 0.5 - Pachuca 1.0",
+                "Prom. Posesión: Al-Hilal 51.5% - Pachuca 45.5%",
+                "Córners Totales: Al-Hilal 17 - Pachuca 15",
+                "Tiros Totales: Al-Hilal 32 - Pachuca 42"
+              ]
+            },
+            prediction: {
+              title: "Análisis Experto",
+              analysis: "Un fascinante choque de motivaciones. Al-Hilal debe ganar para tener alguna posibilidad de avanzar, mientras que Pachuca está eliminado pero juega por el orgullo. Al-Hilal ha controlado la posesión pero ha tenido dificultades para marcar sin Mitrović. El estilo de tiro caótico y de alto volumen de Pachuca ha producido goles en ambos partidos. Los perfiles tácticos de ambos equipos sugieren fuertemente un alto número de saques de esquina, lo que hace que la predicción de 10 de la IA sea una subestimación significativa.",
+              keyPredictions: [
+                { label: "Total de Córners", value: "Más de 11.5", odds: "1.95", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.65", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
+                { label: "Ganador del Partido", value: "Al-Hilal", odds: "1.62", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+              ]
+            }
+          }
+        }
+      }
+    ]
   }
 ];
 
@@ -338,6 +553,7 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
       day1: "June 14, 2025",
       day2: "June 15, 2025",
       day12: "June 25, 2025",
+      day13: "June 26, 2025",
     },
     schedule: generateScheduleForLanguage('en'),
   },
@@ -371,6 +587,7 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
       day1: "14 de Junio, 2025",
       day2: "15 de Junio, 2025",
       day12: "25 de Junio, 2025",
+      day13: "26 de Junio, 2025",
     },
     schedule: generateScheduleForLanguage('es'),
   },
