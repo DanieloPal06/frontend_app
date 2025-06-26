@@ -154,17 +154,17 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
                       <Table>
                           <TableHeader>
                               <TableRow className="hover:bg-transparent">
-                                  <TableHead className="pl-0">{dialogLabels.predictionColumn}</TableHead>
+                                  <TableHead>{dialogLabels.predictionColumn}</TableHead>
                                   <TableHead>{dialogLabels.outcomeColumn}</TableHead>
-                                  <TableHead className="text-right pr-0">{dialogLabels.oddsColumn}</TableHead>
+                                  <TableHead className="text-right">{dialogLabels.oddsColumn}</TableHead>
                               </TableRow>
                           </TableHeader>
                           <TableBody>
                               {match.details.prediction.keyPredictions.map((pred, index) => (
                                   <TableRow key={index} className="hover:bg-muted/50">
-                                      <TableCell className="font-medium text-secondary-foreground pl-0">{pred.label}</TableCell>
+                                      <TableCell className="font-medium text-secondary-foreground">{pred.label}</TableCell>
                                       <TableCell>{pred.value}</TableCell>
-                                      <TableCell className="text-right pr-0 font-semibold text-primary">{pred.odds}</TableCell>
+                                      <TableCell className="text-right font-semibold text-primary">{pred.odds}</TableCell>
                                   </TableRow>
                               ))}
                           </TableBody>
