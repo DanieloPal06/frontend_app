@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/icons";
+import Link from 'next/link';
 
 interface Donor {
   name: string;
@@ -35,10 +36,11 @@ export default function DonationsSection({ content }: DonationsSectionProps) {
         </div>
 
         <div className="flex justify-center mb-12 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-          {/* Placeholder for PayPal Button - User will add actual button here */}
-          <Button size="lg" className="font-semibold" aria-label={content.paypalButtonAriaLabel}>
-            <Icon name="Heart" className="mr-2 h-5 w-5" />
-            {content.paypalButtonText}
+          <Button size="lg" className="font-semibold" aria-label={content.paypalButtonAriaLabel} asChild>
+            <Link href="https://www.paypal.me/danielsant" target="_blank" rel="noopener noreferrer">
+              <Icon name="Heart" className="mr-2 h-5 w-5" />
+              {content.paypalButtonText}
+            </Link>
           </Button>
         </div>
         
