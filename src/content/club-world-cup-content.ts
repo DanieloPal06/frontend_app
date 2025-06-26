@@ -192,15 +192,15 @@ const rawSchedule: RawDaySchedule[] = [
         id: "CWC-2025-15", 
         time: "14:00 COT", 
         team1Id: "BVB", 
-        score1: null, 
+        score1: 1, 
         team2Id: "ULS", 
-        score2: null, 
+        score2: 0, 
         venue: { en: "TQL Stadium, Cincinnati OH", es: "TQL Stadium, Cincinnati OH" }, 
-        status: "SCHEDULED"
+        status: "FINISHED"
       },
-      { id: "CWC-2025-16", time: "14:00 COT", team1Id: "MAM", score1: 0, team2Id: "FLU", score2: 0, venue: { en: "HARD ROCK STADIUM, Miami", es: "HARD ROCK STADIUM, Miami" }, status: "SCHEDULED" },
-      { id: "CWC-2025-17", time: "20:00 COT", team1Id: "INT", score1: 2, team2Id: "RIV", score2: 0, venue: { en: "Lumen Field, Seattle, USA", es: "Lumen Field, Seattle, USA" }, status: "SCHEDULED" },
-      { id: "CWC-2025-18", time: "20:00 COT", team1Id: "URA", score1: 0, team2Id: "MON", score2: 4, venue: { en: "Rose Bowl Stadium, Pasadena", es: "Rose Bowl, Pasadena" }, status: "SCHEDULED" },
+      { id: "CWC-2025-16", time: "14:00 COT", team1Id: "MAM", score1: 0, team2Id: "FLU", score2: 0, venue: { en: "HARD ROCK STADIUM, Miami", es: "HARD ROCK STADIUM, Miami" }, status: "FINISHED" },
+      { id: "CWC-2025-17", time: "20:00 COT", team1Id: "INT", score1: 2, team2Id: "RIV", score2: 0, venue: { en: "Lumen Field, Seattle, USA", es: "Lumen Field, Seattle, USA" }, status: "FINISHED" },
+      { id: "CWC-2025-18", time: "20:00 COT", team1Id: "URA", score1: 0, team2Id: "MON", score2: 4, venue: { en: "Rose Bowl Stadium, Pasadena", es: "Rose Bowl, Pasadena" }, status: "FINISHED" },
     ]
   },
   // Day 4
@@ -213,10 +213,10 @@ const rawSchedule: RawDaySchedule[] = [
         time: "14:00 COT",
         team1Id: "JUV",
         team2Id: "MCI",
-        score1: null,
-        score2: null,
+        score1: 2,
+        score2: 5,
         venue: { en: "Camping World Stadium, Orlando", es: "Camping World Stadium, Orlando" },
-        status: "SCHEDULED",
+        status: "FINISHED",
         details: {
           en: {
             stats: {
@@ -265,10 +265,10 @@ const rawSchedule: RawDaySchedule[] = [
         time: "14:00 COT",
         team1Id: "WYD",
         team2Id: "AIN",
-        score1: null,
-        score2: null,
+        score1: 1,
+        score2: 2,
         venue: { en: "Audi Field, Washington, D.C.", es: "Audi Field, Washington, D.C." },
-        status: "SCHEDULED",
+        status: "FINISHED",
         details: {
           en: {
             stats: {
