@@ -134,17 +134,35 @@ export const content: Record<Language, any> = {
       metaTitle: "Donate to PredictPal | Support Our Project",
       metaDescription: "Support PredictPal by making a donation. Help us improve our table tennis prediction platform and community resources.",
     },
-    donations: { 
-      sectionId: "donations-content", 
-      title: "Support PredictPal",
-      description: "Your generous contributions help us maintain and improve PredictPal, develop new features, and continue providing valuable insights to the table tennis community. Every donation makes a difference!",
+    donations: {
+      sectionId: "donations-content",
+      title: "Help Us Build the Future of PredictPal",
+      introduction: "PredictPal is more than just a tool; it's a community built for and by table tennis lovers. To keep growing and delivering the best features, your support is essential.",
+      listTitle: "Your donation is directly invested in the platform's future. It helps us to:",
+      listItems: [
+        {
+          title: "Dedicate more time",
+          description: "It allows me to focus on improving and expanding PredictPal."
+        },
+        {
+          title: "Accelerate development",
+          description: "Release the features we all want to see, much faster!"
+        },
+        {
+          title: "Build a team",
+          description: "It brings us closer to the goal of hiring more talent to take the website to the next level."
+        }
+      ],
+      callout: {
+        title: "Leave your mark!",
+        description: "When you donate, you can include a message of support. I will personally add it to our website to thank those who make this project possible."
+      },
+      conclusion: "With your help, we're not just maintaining the platform; we're transforming it. Be a part of our growth and help us build the future of table tennis analytics!",
       paypalButtonText: "Donate with PayPal",
       paypalButtonAriaLabel: "Donate with PayPal to support PredictPal",
       thanksTitle: "Special Thanks To Our Donors",
       donors: [
-        { name: "John D.", amount: "$50", message: "Keep up the great work!" },
-        { name: "Maria S.", amount: "€20", message: "Love the predictions! This is fantastic." },
-        { name: "Anonymous Champion", amount: "Generous Gift", message: "To support the community and future development." },
+        { name: "MasTho0128", amount: "$50", message: "Hope this is a good initial boost for you guys =D" },
       ] as Donor[],
     },
     footer: {
@@ -276,17 +294,35 @@ export const content: Record<Language, any> = {
       metaTitle: "Dona a PredictPal | Apoya Nuestro Proyecto",
       metaDescription: "Apoya a PredictPal haciendo una donación. Ayúdanos a mejorar nuestra plataforma de predicción de tenis de mesa y recursos comunitarios.",
     },
-    donations: { 
+    donations: {
       sectionId: "donations-content",
-      title: "Apoya a PredictPal",
-      description: "Tus generosas contribuciones nos ayudan a mantener y mejorar PredictPal, desarrollar nuevas funciones y continuar brindando información valiosa a la comunidad del tenis de mesa. ¡Cada donación marca la diferencia!",
+      title: "Ayúdanos a construir el futuro de PredictPal",
+      introduction: "PredictPal es más que una herramienta; es una comunidad construida para y por amantes del tenis de mesa. Para seguir creciendo y ofreciendo las mejores funcionalidades, tu apoyo es fundamental.",
+      listTitle: "Tu donación se invierte directamente en el futuro de la plataforma. Nos ayuda a:",
+      listItems: [
+        {
+          title: "Dedicar más tiempo",
+          description: "Me permite enfocarme en mejorar y expandir PredictPal."
+        },
+        {
+          title: "Acelerar el desarrollo",
+          description: "Lanzar las mejoras que todos queremos ver, ¡mucho más rápido!"
+        },
+        {
+          title: "Construir un equipo",
+          description: "Nos acerca al objetivo de sumar más talento para llevar la web al siguiente nivel."
+        }
+      ],
+      callout: {
+        title: "¡Deja tu huella!",
+        description: "Al donar, puedes incluir un mensaje de apoyo. Lo añadiré personalmente a nuestra web como agradecimiento a quienes hacen posible este proyecto."
+      },
+      conclusion: "Con tu ayuda, no solo mantenemos la plataforma, sino que la transformamos. ¡Sé parte de nuestro crecimiento y ayúdanos a construir el futuro del análisis del tenis de mesa!",
       paypalButtonText: "Donar con PayPal",
       paypalButtonAriaLabel: "Donar con PayPal para apoyar a PredictPal",
       thanksTitle: "Agradecimientos Especiales a Nuestros Donantes",
       donors: [
-        { name: "Juan D.", amount: "$50", message: "¡Sigan con el gran trabajo!" },
-        { name: "María S.", amount: "€20", message: "¡Me encantan las predicciones! Esto es fantástico." },
-        { name: "Campeón Anónimo", amount: "Donación Generosa", message: "Para apoyar a la comunidad y el desarrollo futuro." },
+        { name: "MasTho0128", amount: "$50", message: "Espero que esto sea un buen impulso inicial para ustedes, chicos =D" },
       ] as Donor[],
     },
     footer: {

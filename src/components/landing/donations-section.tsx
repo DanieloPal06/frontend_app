@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/icons";
 import Link from 'next/link';
+import { CheckCircle2 } from "lucide-react";
 
 interface Donor {
   name: string;
@@ -10,15 +11,29 @@ interface Donor {
   message: string;
 }
 
+interface ListItem {
+  title: string;
+  description: string;
+}
+
+interface Callout {
+  title: string;
+  description: string;
+}
+
 interface DonationsSectionProps {
   content: {
     title: string;
-    description: string;
+    sectionId: string;
+    introduction: string;
+    listTitle: string;
+    listItems: ListItem[];
+    callout: Callout;
+    conclusion: string;
     paypalButtonText: string;
     paypalButtonAriaLabel: string;
     thanksTitle: string;
     donors: Donor[];
-    sectionId: string; // Kept for potential use as element ID
   };
 }
 
@@ -30,9 +45,32 @@ export default function DonationsSection({ content }: DonationsSectionProps) {
           <h2 className="font-headline text-3xl font-bold text-foreground sm:text-4xl md:text-5xl animate-fadeInUp">
             {content.title}
           </h2>
-          <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-            {content.description}
-          </p>
+          
+          <div className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl animate-fadeInUp text-left space-y-6" style={{ animationDelay: '0.2s' }}>
+            <p>{content.introduction}</p>
+            
+            <div>
+              <p className="font-medium text-foreground">{content.listTitle}</p>
+              <ul className="mt-4 space-y-4">
+                {content.listItems.map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-primary mr-3 mt-1 shrink-0" />
+                    <div>
+                      <strong className="font-semibold text-foreground">{item.title}:</strong>
+                      <span className="text-muted-foreground"> {item.description}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="p-4 bg-primary/10 border-l-4 border-primary rounded-r-lg">
+              <strong className="font-semibold text-primary">{content.callout.title}</strong>
+              <p className="mt-1 text-muted-foreground">{content.callout.description}</p>
+            </div>
+            
+            <p>{content.conclusion}</p>
+          </div>
         </div>
 
         <div className="flex justify-center mb-12 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
@@ -67,5 +105,3 @@ export default function DonationsSection({ content }: DonationsSectionProps) {
     </section>
   );
 }
-
-    

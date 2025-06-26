@@ -198,55 +198,11 @@ const rawSchedule: RawDaySchedule[] = [
         team2Id: "ULS", 
         score2: null, 
         venue: { en: "TQL Stadium, Cincinnati OH", es: "TQL Stadium, Cincinnati OH" }, 
-        status: "SCHEDULED",
-        details: {
-          en: {
-            stats: {
-              title: "Team Head-to-Head",
-              content: [
-                "This is the first official meeting between Borussia Dortmund and Ulsan Hyundai.",
-                "Dortmund's recent Champions League performance shows strong offensive capabilities.",
-                "Ulsan Hyundai dominated the K League 1 with a solid defensive record."
-              ]
-            },
-            prediction: {
-              title: "PredictPal's AI Analysis",
-              analysis: "Borussia Dortmund is the clear favorite, but Ulsan's disciplined defense could pose a challenge. We predict a narrow victory for the German side, with chances for both teams to score.",
-              keyPredictions: [
-                { label: "Match Winner", value: "B. Dortmund (70%)", odds: "1.50", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
-                { label: "Total Goals", value: "Over 2.5 (60%)", odds: "1.85", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Betway" },
-                { label: "Total Corners", value: "Over 9.5 (70%)", odds: "1.72", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "1xBet" },
-                { label: "Total Cards", value: "Under 4.5 (85%)", odds: "1.40", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
-                { label: "Both Teams to Score", value: "Yes (55%)", odds: "1.90", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Betway" }
-              ]
-            }
-          },
-          es: {
-            stats: {
-              title: "Análisis Cara a Cara",
-              content: [
-                "Este es el primer encuentro oficial entre Borussia Dortmund y Ulsan Hyundai.",
-                "El reciente desempeño del Dortmund en la Champions League muestra una gran capacidad ofensiva.",
-                "Ulsan Hyundai dominó la K League 1 con un sólido récord defensivo."
-              ]
-            },
-            prediction: {
-              title: "Análisis de IA de PredictPal",
-              analysis: "El Borussia Dortmund es el claro favorito, pero la defensa disciplinada de Ulsan podría presentar un desafío. Predecimos una victoria ajustada para el equipo alemán, con oportunidades de gol para ambos equipos.",
-              keyPredictions: [
-                { label: "Ganador del Partido", value: "B. Dortmund (75%)", odds: "1.50", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
-                { label: "Goles Totales", value: "Más de 2.5 (60%)", odds: "1.85", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Betway" },
-                { label: "Córners Totales", value: "Más de 9.5 (70%)", odds: "1.72", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "1xBet" },
-                { label: "Tarjetas Totales", value: "Menos de 4.5 (85%)", odds: "1.40", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Bet365" },
-                { label: "Ambos Equipos Anotan", value: "Sí (55%)", odds: "1.90", bookmakerLogoUrl: "https://placehold.co/100x25.png", bookmakerName: "Betway" }
-              ]
-            }
-          }
-        }
+        status: "SCHEDULED"
       },
-      { id: "CWC-2025-16", time: "14:00 COT", team1Id: "MAM", score1: null, team2Id: "FLU", score2: null, venue: { en: "HARD ROCK STADIUM, Miami", es: "HARD ROCK STADIUM, Miami" }, status: "SCHEDULED" },
-      { id: "CWC-2025-17", time: "20:00 COT", team1Id: "INT", score1: null, team2Id: "RIV", score2: null, venue: { en: "Lumen Field, Seattle, USA", es: "Lumen Field, Seattle, USA" }, status: "SCHEDULED" },
-      { id: "CWC-2025-18", time: "20:00 COT", team1Id: "URA", score1: null, team2Id: "MON", score2: null, venue: { en: "Rose Bowl Stadium, Pasadena", es: "Rose Bowl, Pasadena" }, status: "SCHEDULED" },
+      { id: "CWC-2025-16", time: "14:00 COT", team1Id: "MAM", score1: 0, team2Id: "FLU", score2: 0, venue: { en: "HARD ROCK STADIUM, Miami", es: "HARD ROCK STADIUM, Miami" }, status: "SCHEDULED" },
+      { id: "CWC-2025-17", time: "20:00 COT", team1Id: "INT", score1: 2, team2Id: "RIV", score2: 0, venue: { en: "Lumen Field, Seattle, USA", es: "Lumen Field, Seattle, USA" }, status: "SCHEDULED" },
+      { id: "CWC-2025-18", time: "20:00 COT", team1Id: "URA", score1: 0, team2Id: "MON", score2: 4, venue: { en: "Rose Bowl Stadium, Pasadena", es: "Rose Bowl, Pasadena" }, status: "SCHEDULED" },
     ]
   }
 ];
