@@ -309,9 +309,9 @@ const generateScheduleForLanguage = (lang: Language): DaySchedule[] => {
  */
 export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
   en: {
-    metaTitle: "Club World Cup 2025 Matches | PredictPal",
-    metaDescription: "Follow the Club World Cup 2025 matches, schedules, and results.",
-    pageTitle: "Club World Cup 2025 Schedule",
+    metaTitle: "FIFA Club World Cup 2025 Matches | PredictPal",
+    metaDescription: "Follow the FIFA Club World Cup 2025 matches, schedules, and results.",
+    pageTitle: "FIFA Club World Cup 2025 Schedule",
     selectDayPrompt: "Select a day to view matches:",
     noMatchesMessage: "No matches scheduled for this day.",
     matchCard: {
@@ -342,9 +342,9 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
     schedule: generateScheduleForLanguage('en'),
   },
   es: {
-    metaTitle: "Partidos Mundial de Clubes 2025 | PredictPal",
-    metaDescription: "Sigue los partidos, horarios y resultados del Mundial de Clubes 2025.",
-    pageTitle: "Calendario Mundial de Clubes 2025",
+    metaTitle: "Partidos Mundial de Clubes FIFA 2025 | PredictPal",
+    metaDescription: "Sigue los partidos, horarios y resultados del Mundial de Clubes FIFA 2025.",
+    pageTitle: "Calendario Mundial de Clubes FIFA 2025",
     selectDayPrompt: "Selecciona un día para ver los partidos: ",
     noMatchesMessage: "No hay partidos programados para este día.",
     matchCard: {

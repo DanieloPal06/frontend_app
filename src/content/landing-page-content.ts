@@ -29,14 +29,14 @@ export const content: Record<Language, any> = {
     },
     nav: {
       home: "Home",
-      mundialDeClubes: "Club World Cup",
+      mundialDeClubes: "FIFA Club World Cup",
       academy: "Academy",
       donations: "Donations", 
     },
     hero: {
       title: 'A "Bet"ter Way to Wager',
       subtitle: "PredictPal uses advanced neural networks to offer you match forecasts and betting strategies with unparalleled accuracy. Stop betting blind and start making data-driven decisions.",
-      ctaPrimary: "View Club World Cup",
+      ctaPrimary: "View FIFA Club World Cup",
       ctaSecondary: "Explore the Academy",
     },
     problem: {
@@ -189,14 +189,14 @@ export const content: Record<Language, any> = {
     },
     nav: {
       home: "Inicio",
-      mundialDeClubes: "Mundial de Clubes",
+      mundialDeClubes: "Mundial de Clubes FIFA",
       academy: "Academia",
       donations: "Donaciones", 
     },
     hero: {
       title: "El futuro de tu apuesta, decidido en tiempo presente.",
       subtitle: "PredictPal utiliza redes neuronales avanzadas para ofrecerte pronósticos de partidos y estrategias de apuestas con una precisión inigualable. Deja de apostar a ciegas y empieza a tomar decisiones basadas en datos.",
-      ctaPrimary: "Ver Mundial de Clubes",
+      ctaPrimary: "Ver Mundial de Clubes FIFA",
       ctaSecondary: "Explorar la Academia",
     },
     problem: {
