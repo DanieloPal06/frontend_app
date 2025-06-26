@@ -29,7 +29,6 @@ interface MatchCardProps {
     predictionColumn: string;
     outcomeColumn: string;
     oddsColumn: string;
-    bookmakerColumn: string;
   };
 }
 
@@ -157,8 +156,7 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
                               <TableRow className="hover:bg-transparent">
                                   <TableHead className="pl-0">{dialogLabels.predictionColumn}</TableHead>
                                   <TableHead>{dialogLabels.outcomeColumn}</TableHead>
-                                  <TableHead className="text-center">{dialogLabels.oddsColumn}</TableHead>
-                                  <TableHead className="text-right pr-0">{dialogLabels.bookmakerColumn}</TableHead>
+                                  <TableHead className="text-right pr-0">{dialogLabels.oddsColumn}</TableHead>
                               </TableRow>
                           </TableHeader>
                           <TableBody>
@@ -166,19 +164,7 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
                                   <TableRow key={index} className="hover:bg-muted/50">
                                       <TableCell className="font-medium text-secondary-foreground pl-0">{pred.label}</TableCell>
                                       <TableCell>{pred.value}</TableCell>
-                                      <TableCell className="text-center font-semibold text-primary">{pred.odds}</TableCell>
-                                      <TableCell className="flex justify-end pr-0">
-                                          {pred.bookmakerLogoUrl && (
-                                              <Image
-                                                  src={pred.bookmakerLogoUrl}
-                                                  alt={`${pred.bookmakerName} logo`}
-                                                  width={80}
-                                                  height={20}
-                                                  className="object-contain"
-                                                  data-ai-hint="bookmaker logo"
-                                              />
-                                          )}
-                                      </TableCell>
+                                      <TableCell className="text-right pr-0 font-semibold text-primary">{pred.odds}</TableCell>
                                   </TableRow>
                               ))}
                           </TableBody>

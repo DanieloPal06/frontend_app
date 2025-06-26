@@ -86,8 +86,6 @@ interface KeyPrediction {
   label: string;
   value: string;
   odds: string;
-  bookmakerLogoUrl: string;
-  bookmakerName: string;
 }
 
 interface RawPrediction {
@@ -234,9 +232,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Expert Analysis",
               analysis: "A tactical battle for the top spot in Group G. Man City's perfect defensive record (0 goals conceded) clashes with Juventus's historical dominance in this fixture. A draw secures the top spot for Juventus, forcing City to attack. While the AI predicts a Juventus win, City's current form and territorial dominance give them a slight edge. Expect a tight match where both potent attacks find the net.",
               keyPredictions: [
-                { label: "Both Teams to Score", value: "Yes", odds: "1.75", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Total Corners", value: "Over 9.5", odds: "1.80", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Match Result", value: "Draw or Man City", odds: "1.50", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+                { label: "Both Teams to Score", value: "Yes", odds: "1.75" },
+                { label: "Total Corners", value: "Over 9.5", odds: "1.80" },
+                { label: "Match Result", value: "Draw or Man City", odds: "1.50" }
               ]
             }
           },
@@ -254,9 +252,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Análisis Experto",
               analysis: "Una batalla táctica por el primer puesto del Grupo G. El récord defensivo perfecto del Man City (0 goles en contra) choca con el dominio histórico de la Juventus en este enfrentamiento. Un empate asegura el primer puesto para la Juventus, obligando al City a atacar. Aunque la IA predice una victoria de la Juventus, la forma actual del City y su dominio territorial les dan una ligera ventaja. Se espera un partido reñido en el que ambos potentes ataques encuentren la red.",
               keyPredictions: [
-                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.75", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Total de Córners", value: "Más de 9.5", odds: "1.80", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Resultado del Partido", value: "Empate o Man City", odds: "1.50", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.75" },
+                { label: "Total de Córners", value: "Más de 9.5", odds: "1.80" },
+                { label: "Resultado del Partido", value: "Empate o Man City", odds: "1.50" }
               ]
             }
           }
@@ -286,9 +284,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Expert Analysis",
               analysis: "A match for pride between two eliminated teams. Al-Ain's attack has been completely ineffective, failing to score a single goal and generating a very low xG. WAC, while also struggling, has shown slightly more offensive capability. The statistical evidence strongly suggests a low-scoring affair, with WAC as the logical, albeit uninspiring, favorite.",
               keyPredictions: [
-                { label: "Both Teams to Score", value: "No", odds: "1.90", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Match Winner", value: "Wydad Casablanca", odds: "2.40", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Total Goals", value: "Under 2.5", odds: "1.85", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+                { label: "Both Teams to Score", value: "No", odds: "1.90" },
+                { label: "Match Winner", value: "Wydad Casablanca", odds: "2.40" },
+                { label: "Total Goals", value: "Under 2.5", odds: "1.85" }
               ]
             }
           },
@@ -306,9 +304,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Análisis Experto",
               analysis: "Un partido por el orgullo entre dos equipos ya eliminados. El ataque de Al-Ain ha sido completamente ineficaz, sin marcar un solo gol y generando un xG muy bajo. El WAC, aunque también con dificultades, ha mostrado una capacidad ofensiva ligeramente mayor. La evidencia estadística sugiere fuertemente un partido de pocos goles, con el WAC como favorito lógico, aunque poco inspirador.",
               keyPredictions: [
-                { label: "Ambos Equipos Marcarán", value: "No", odds: "1.90", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Ganador del Partido", value: "Wydad Casablanca", odds: "2.40", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Total de Goles", value: "Menos de 2.5", odds: "1.85", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+                { label: "Ambos Equipos Marcarán", value: "No", odds: "1.90" },
+                { label: "Ganador del Partido", value: "Wydad Casablanca", odds: "2.40" },
+                { label: "Total de Goles", value: "Menos de 2.5", odds: "1.85" }
               ]
             }
           }
@@ -338,9 +336,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Expert Analysis",
               analysis: "A high-stakes match for qualification. Real Madrid only needs a draw, while Salzburg likely needs a win. Madrid's attack is potent, but their defense has been alarmingly porous, conceding 38 shots in two games. This defensive fragility, coupled with Salzburg's need to push forward, makes a 'Both Teams to Score' prediction very strong. The AI's pick of a Madrid win seems to overlook these critical defensive issues.",
               keyPredictions: [
-                { label: "Both Teams to Score", value: "Yes", odds: "1.70", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Match Result", value: "Draw", odds: "4.90", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Total Goals", value: "Over 2.5", odds: "1.76", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+                { label: "Both Teams to Score", value: "Yes", odds: "1.70" },
+                { label: "Match Result", value: "Draw", odds: "4.90" },
+                { label: "Total Goals", value: "Over 2.5", odds: "1.76" }
               ]
             }
           },
@@ -358,9 +356,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Análisis Experto",
               analysis: "Un partido de alto riesgo para la clasificación. Al Real Madrid le basta un empate, mientras que el Salzburgo probablemente necesite una victoria. El ataque del Madrid es potente, pero su defensa ha sido alarmantemente porosa, concediendo 38 tiros en dos partidos. Esta fragilidad defensiva, unida a la necesidad del Salzburgo de atacar, hace que la predicción de 'Ambos Equipos Marcarán' sea muy sólida. La elección de la IA de una victoria del Madrid parece pasar por alto estos problemas defensivos críticos.",
               keyPredictions: [
-                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.70", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Resultado del Partido", value: "Empate", odds: "4.90", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Total de Goles", value: "Más de 2.5", odds: "1.76", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.70" },
+                { label: "Resultado del Partido", value: "Empate", odds: "4.90" },
+                { label: "Total de Goles", value: "Más de 2.5", odds: "1.76" }
               ]
             }
           }
@@ -390,9 +388,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Expert Analysis",
               analysis: "A fascinating clash of motivations. Al-Hilal must win to have any chance of advancing, while Pachuca is eliminated but playing for pride. Al-Hilal has controlled possession but struggled to score without Mitrović. Pachuca's high-volume, chaotic shooting style has produced goals in both games. The tactical profiles of both teams strongly suggest a high number of corners, making the AI's prediction of 10 a significant underestimation.",
               keyPredictions: [
-                { label: "Total Corners", value: "Over 11.5", odds: "1.95", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Both Teams to Score", value: "Yes", odds: "1.65", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Match Winner", value: "Al-Hilal", odds: "1.62", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+                { label: "Total Corners", value: "Over 11.5", odds: "1.95" },
+                { label: "Both Teams to Score", value: "Yes", odds: "1.65" },
+                { label: "Match Winner", value: "Al-Hilal", odds: "1.62" }
               ]
             }
           },
@@ -410,9 +408,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Análisis Experto",
               analysis: "Un fascinante choque de motivaciones. Al-Hilal debe ganar para tener alguna posibilidad de avanzar, mientras que Pachuca está eliminado pero juega por el orgullo. Al-Hilal ha controlado la posesión pero ha tenido dificultades para marcar sin Mitrović. El estilo de tiro caótico y de alto volumen de Pachuca ha producido goles en ambos partidos. Los perfiles tácticos de ambos equipos sugieren fuertemente un alto número de saques de esquina, lo que hace que la predicción de 10 de la IA sea una subestimación significativa.",
               keyPredictions: [
-                { label: "Total de Córners", value: "Más de 11.5", odds: "1.95", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.65", bookmakerLogoUrl: "", bookmakerName: "PredictPal" },
-                { label: "Ganador del Partido", value: "Al-Hilal", odds: "1.62", bookmakerLogoUrl: "", bookmakerName: "PredictPal" }
+                { label: "Total de Córners", value: "Más de 11.5", odds: "1.95" },
+                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.65" },
+                { label: "Ganador del Partido", value: "Al-Hilal", odds: "1.62" }
               ]
             }
           }
@@ -480,7 +478,6 @@ export interface ClubWorldCupPageContent {
     predictionColumn: string;
     outcomeColumn: string;
     oddsColumn: string;
-    bookmakerColumn: string;
   };
   dayLabels: Record<string, string>;
   schedule: DaySchedule[];
@@ -544,10 +541,9 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
       predictionTitle: "Prediction & Analysis",
       closeButton: "Close",
       noDetails: "Match details are not yet available.",
-      predictionColumn: "Prediction",
+      predictionColumn: "Forecast",
       outcomeColumn: "Outcome",
       oddsColumn: "Odds",
-      bookmakerColumn: "Bookmaker",
     },
     dayLabels: {
       day1: "June 14, 2025",
@@ -578,10 +574,9 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
       predictionTitle: "Predicción y Análisis",
       closeButton: "Cerrar",
       noDetails: "Los detalles del partido aún no están disponibles.",
-      predictionColumn: "Predicción",
+      predictionColumn: "Pronóstico",
       outcomeColumn: "Resultado",
       oddsColumn: "Cuotas",
-      bookmakerColumn: "Casa de Apuestas",
     },
     dayLabels: {
       day1: "14 de Junio, 2025",
