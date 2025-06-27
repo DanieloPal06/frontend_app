@@ -29,6 +29,7 @@ interface MatchCardProps {
     predictionColumn: string;
     outcomeColumn: string;
     oddsColumn: string;
+    resultStatusColumn: string;
   };
 }
 
@@ -42,7 +43,7 @@ function TeamDisplay({ team, isReversedOnDesktop = false }: TeamDisplayProps) {
   const scoreOrder = isReversedOnDesktop ? 'md:order-first' : 'md:order-last';
 
   return (
-    <div className={`flex w-full flex-col items-center gap-2 text-center md:text-left ${desktopFlexDirection}`}>
+    <div className={`flex w-full flex-col items-center gap-2 text-center md:flex-row md:text-left ${desktopFlexDirection}`}>
       <div className='flex flex-col items-center gap-2 md:flex-row'>
         {team.logoUrl && (
           <Image
@@ -57,7 +58,7 @@ function TeamDisplay({ team, isReversedOnDesktop = false }: TeamDisplayProps) {
         <span className="font-semibold text-base md:text-lg group-hover:text-primary transition-colors">{team.name}</span>
       </div>
       {typeof team.score === 'number' && (
-        <span className={`font-bold text-xl text-primary ${scoreOrder}`}>{team.score}</span>
+        <span className={`font-bold text-xl text-primary md:ml-auto ${scoreOrder}`}>{team.score}</span>
       )}
     </div>
   );
@@ -157,6 +158,7 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
                                   <TableHead>{dialogLabels.predictionColumn}</TableHead>
                                   <TableHead>{dialogLabels.outcomeColumn}</TableHead>
                                   <TableHead className="text-right">{dialogLabels.oddsColumn}</TableHead>
+                                  <TableHead className="text-center w-[80px]">{dialogLabels.resultStatusColumn}</TableHead>
                               </TableRow>
                           </TableHeader>
                           <TableBody>
@@ -165,6 +167,18 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
                                       <TableCell className="font-medium text-secondary-foreground">{pred.label}</TableCell>
                                       <TableCell>{pred.value}</TableCell>
                                       <TableCell className="text-right font-semibold text-primary">{pred.odds}</TableCell>
+                                      <TableCell className="text-center">
+                                        <div
+                                          title={`Result: ${pred.outcome}`}
+                                          className={`mx-auto h-3 w-3 rounded-full ${
+                                            pred.outcome === 'WON'
+                                              ? 'bg-green-500'
+                                              : pred.outcome === 'LOST'
+                                              ? 'bg-red-500'
+                                              : 'bg-gray-400'
+                                          }`}
+                                        />
+                                      </TableCell>
                                   </TableRow>
                               ))}
                           </TableBody>
