@@ -255,7 +255,7 @@ const rawSchedule: RawDaySchedule[] = [
               analysis: "Una batalla táctica por el primer puesto del Grupo G. El récord defensivo perfecto del Man City (0 goles en contra) choca con el dominio histórico de la Juventus en este enfrentamiento. Un empate asegura el primer puesto para la Juventus, obligando al City a atacar. Aunque la IA predice una victoria de la Juventus, la forma actual del City y su dominio territorial les dan una ligera ventaja. Se espera un partido reñido en el que ambos potentes ataques encuentren la red.",
               keyPredictions: [
                 { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.75", outcome: "WON" },
-                { label: "Total de Córners", value: "Más de 9.5", odds: "1.80", outcome: "WON" },
+                { label: "Total de Córners", value: "Más de 9.5", odds: "1.80", outcome: "LOST" },
                 { label: "Resultado del Partido", value: "Empate o Man City", odds: "1.50", outcome: "WON" }
               ]
             }
@@ -286,7 +286,7 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Expert Analysis",
               analysis: "A match for pride between two eliminated teams. Al-Ain's attack has been completely ineffective, failing to score a single goal and generating a very low xG. WAC, while also struggling, has shown slightly more offensive capability. The statistical evidence strongly suggests a low-scoring affair, with WAC as the logical, albeit uninspiring, favorite.",
               keyPredictions: [
-                { label: "Both Teams to Score", value: "No", odds: "1.90", outcome: "LOST" },
+                { label: "Both Teams to Score", value: "No", odds: "1.90", outcome: "WON" },
                 { label: "Match Winner", value: "Wydad Casablanca", odds: "2.40", outcome: "LOST" },
                 { label: "Total Goals", value: "Under 2.5", odds: "1.85", outcome: "LOST" }
               ]
@@ -306,7 +306,7 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Análisis Experto",
               analysis: "Un partido por el orgullo entre dos equipos ya eliminados. El ataque de Al-Ain ha sido completamente ineficaz, sin marcar un solo gol y generando un xG muy bajo. El WAC, aunque también con dificultades, ha mostrado una capacidad ofensiva ligeramente mayor. La evidencia estadística sugiere fuertemente un partido de pocos goles, con el WAC como favorito lógico, aunque poco inspirador.",
               keyPredictions: [
-                { label: "Ambos Equipos Marcarán", value: "No", odds: "1.90", outcome: "LOST" },
+                { label: "Ambos Equipos Marcarán", value: "No", odds: "1.90", outcome: "WON" },
                 { label: "Ganador del Partido", value: "Wydad Casablanca", odds: "2.40", outcome: "LOST" },
                 { label: "Total de Goles", value: "Menos de 2.5", odds: "1.85", outcome: "LOST" }
               ]
@@ -319,10 +319,10 @@ const rawSchedule: RawDaySchedule[] = [
         time: "20:00 COT",
         team1Id: "RBS",
         team2Id: "RMA",
-        score1: null,
-        score2: null,
+        score1: 3,
+        score2: 0,
         venue: { en: "Lincoln Financial Field, Philadelphia", es: "Lincoln Financial Field, Filadelfia" },
-        status: "SCHEDULED",
+        status: "FINISHED",
         details: {
           en: {
             stats: {
@@ -338,9 +338,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Expert Analysis",
               analysis: "A high-stakes match for qualification. Real Madrid only needs a draw, while Salzburg likely needs a win. Madrid's attack is potent, but their defense has been alarmingly porous, conceding 38 shots in two games. This defensive fragility, coupled with Salzburg's need to push forward, makes a 'Both Teams to Score' prediction very strong. The AI's pick of a Madrid win seems to overlook these critical defensive issues.",
               keyPredictions: [
-                { label: "Both Teams to Score", value: "Yes", odds: "1.70", outcome: "PENDING" },
-                { label: "Match Result", value: "Draw", odds: "4.90", outcome: "PENDING" },
-                { label: "Total Goals", value: "Over 2.5", odds: "1.76", outcome: "PENDING" }
+                { label: "Both Teams to Score", value: "Yes", odds: "1.70", outcome: "LOST" },
+                { label: "Match Result", value: "Draw", odds: "4.90", outcome: "LOST" },
+                { label: "Total Goals", value: "Over 2.5", odds: "1.76", outcome: "WON" }
               ]
             }
           },
@@ -358,9 +358,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Análisis Experto",
               analysis: "Un partido de alto riesgo para la clasificación. Al Real Madrid le basta un empate, mientras que el Salzburgo probablemente necesite una victoria. El ataque del Madrid es potente, pero su defensa ha sido alarmantemente porosa, concediendo 38 tiros en dos partidos. Esta fragilidad defensiva, unida a la necesidad del Salzburgo de atacar, hace que la predicción de 'Ambos Equipos Marcarán' sea muy sólida. La elección de la IA de una victoria del Madrid parece pasar por alto estos problemas defensivos críticos.",
               keyPredictions: [
-                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.70", outcome: "PENDING" },
-                { label: "Resultado del Partido", value: "Empate", odds: "4.90", outcome: "PENDING" },
-                { label: "Total de Goles", value: "Más de 2.5", odds: "1.76", outcome: "PENDING" }
+                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.70", outcome: "LOST" },
+                { label: "Resultado del Partido", value: "Empate", odds: "4.90", outcome: "LOST" },
+                { label: "Total de Goles", value: "Más de 2.5", odds: "1.76", outcome: "WON" }
               ]
             }
           }
@@ -371,10 +371,10 @@ const rawSchedule: RawDaySchedule[] = [
         time: "20:00 COT",
         team1Id: "HIL",
         team2Id: "PAC",
-        score1: null,
-        score2: null,
+        score1: 2,
+        score2: 0,
         venue: { en: "Geodis Park, Nashville", es: "Geodis Park, Nashville" },
-        status: "SCHEDULED",
+        status: "FINISHED",
         details: {
           en: {
             stats: {
@@ -390,9 +390,9 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Expert Analysis",
               analysis: "A fascinating clash of motivations. Al-Hilal must win to have any chance of advancing, while Pachuca is eliminated but playing for pride. Al-Hilal has controlled possession but struggled to score without Mitrović. Pachuca's high-volume, chaotic shooting style has produced goals in both games. The tactical profiles of both teams strongly suggest a high number of corners, making the AI's prediction of 10 a significant underestimation.",
               keyPredictions: [
-                { label: "Total Corners", value: "Over 11.5", odds: "1.95", outcome: "PENDING" },
-                { label: "Both Teams to Score", value: "Yes", odds: "1.65", outcome: "PENDING" },
-                { label: "Match Winner", value: "Al-Hilal", odds: "1.62", outcome: "PENDING" }
+                { label: "Total Corners", value: "Over 11.5", odds: "1.95", outcome: "LOST" },
+                { label: "Both Teams to Score", value: "Yes", odds: "1.65", outcome: "LOST" },
+                { label: "Match Winner", value: "Al-Hilal", odds: "1.62", outcome: "WON" }
               ]
             }
           },
@@ -410,9 +410,75 @@ const rawSchedule: RawDaySchedule[] = [
               title: "Análisis Experto",
               analysis: "Un fascinante choque de motivaciones. Al-Hilal debe ganar para tener alguna posibilidad de avanzar, mientras que Pachuca está eliminado pero juega por el orgullo. Al-Hilal ha controlado la posesión pero ha tenido dificultades para marcar sin Mitrović. El estilo de tiro caótico y de alto volumen de Pachuca ha producido goles en ambos partidos. Los perfiles tácticos de ambos equipos sugieren fuertemente un alto número de saques de esquina, lo que hace que la predicción de 10 de la IA sea una subestimación significativa.",
               keyPredictions: [
-                { label: "Total de Córners", value: "Más de 11.5", odds: "1.95", outcome: "PENDING" },
-                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.65", outcome: "PENDING" },
-                { label: "Ganador del Partido", value: "Al-Hilal", odds: "1.62", outcome: "PENDING" }
+                { label: "Total de Córners", value: "Más de 11.5", odds: "1.95", outcome: "LOST" },
+                { label: "Ambos Equipos Marcarán", value: "Sí", odds: "1.65", outcome: "LOST" },
+                { label: "Ganador del Partido", value: "Al-Hilal", odds: "1.62", outcome: "WON" }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    dateISO: "2025-06-28",
+    dayLabelKey: "dayToday",
+    matches: [
+      {
+        id: "CWC-2025-23",
+        time: "11:00 COT",
+        team1Id: "PAL",
+        team2Id: "BOT",
+        score1: null,
+        score2: null,
+        venue: { en: "Lincoln Financial Field, Philadelphia", es: "Lincoln Financial Field, Filadelfia" },
+        status: "SCHEDULED",
+        details: {
+          en: {
+            stats: { title: "Key Statistics (Last 2 CWC Matches)", content: [] },
+            prediction: { title: "Expert Analysis", analysis: "", keyPredictions: [
+                { label: "", value: "", odds: "", outcome: "PENDING" },
+                { label: "", value: "", odds: "", outcome: "PENDING" },
+                { label: "", value: "", odds: "", outcome: "PENDING" }
+              ]
+            }
+          },
+          es: {
+            stats: { title: "Estadísticas Clave (Últimos 2 Partidos CWC)", content: [] },
+            prediction: { title: "Análisis Experto", analysis: "", keyPredictions: [
+                { label: "", value: "", odds: "", outcome: "PENDING" },
+                { label: "", value: "", odds: "", outcome: "PENDING" },
+                { label: "", value: "", odds: "", outcome: "PENDING" }
+              ]
+            }
+          }
+        }
+      },
+      {
+        id: "CWC-2025-24",
+        time: "15:00 COT",
+        team1Id: "BEN",
+        team2Id: "CHE",
+        score1: null,
+        score2: null,
+        venue: { en: "Bank of America Stadium, Charlotte, NC", es: "Bank of America Stadium, Charlotte, NC" },
+        status: "SCHEDULED",
+        details: {
+          en: {
+            stats: { title: "Key Statistics (Last 2 CWC Matches)", content: [] },
+            prediction: { title: "Expert Analysis", analysis: "", keyPredictions: [
+                { label: "", value: "", odds: "", outcome: "PENDING" },
+                { label: "", value: "", odds: "", outcome: "PENDING" },
+                { label: "", value: "", odds: "", outcome: "PENDING" }
+              ]
+            }
+          },
+          es: {
+            stats: { title: "Estadísticas Clave (Últimos 2 Partidos CWC)", content: [] },
+            prediction: { title: "Análisis Experto", analysis: "", keyPredictions: [
+                { label: "", value: "", odds: "", outcome: "PENDING" },
+                { label: "", value: "", odds: "", outcome: "PENDING" },
+                { label: "", value: "", odds: "", outcome: "PENDING" }
               ]
             }
           }
