@@ -455,19 +455,19 @@ const rawSchedule: RawDaySchedule[] = [
                   "label": "To Qualify",
                   "value": "Palmeiras",
                   "odds": "-250",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 },
                 {
                   "label": "Total Goals",
                   "value": "Under 2.5",
                   "odds": "-189",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 },
                 {
                   "label": "Both Teams to Score",
                   "value": "No",
                   "odds": "-125",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 }
               ]
             }
@@ -490,19 +490,19 @@ const rawSchedule: RawDaySchedule[] = [
                   "label": "Clasificará",
                   "value": "Palmeiras",
                   "odds": "-250",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 },
                 {
                   "label": "Total de Goles",
                   "value": "Menos de 2.5",
                   "odds": "-189",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 },
                 {
                   "label": "Ambos Equipos Marcan",
                   "value": "No",
                   "odds": "-125",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 }
               ]
             }
@@ -729,6 +729,7 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
       day2: "June 15, 2025",
       day12: "June 25, 2025",
       day13: "June 26, 2025",
+      dayToday: "Today"
     },
     schedule: generateScheduleForLanguage('en'),
   },
@@ -763,6 +764,7 @@ export const clubWorldCupContent: Record<Language, ClubWorldCupPageContent> = {
       day2: "15 de Junio, 2025",
       day12: "25 de Junio, 2025",
       day13: "26 de Junio, 2025",
+      dayToday: "Hoy"
     },
     schedule: generateScheduleForLanguage('es'),
   },
