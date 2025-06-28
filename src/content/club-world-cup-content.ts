@@ -429,13 +429,13 @@ const rawSchedule: RawDaySchedule[] = [
         "time": "11:00 COT",
         "team1Id": "PAL",
         "team2Id": "BOT",
-        "score1": null,
-        "score2": null,
+        "score1": 1,
+        "score2": 0,
         "venue": {
           "en": "Lincoln Financial Field, Philadelphia",
           "es": "Lincoln Financial Field, Filadelfia"
         },
-        "status": "SCHEDULED",
+        "status": "FINISHED",
         "details": {
           "en": {
             "stats": {
