@@ -421,71 +421,180 @@ const rawSchedule: RawDaySchedule[] = [
     ]
   },
   {
-    dateISO: "2025-06-28",
-    dayLabelKey: "dayToday",
-    matches: [
+    "dateISO": "2025-06-28",
+    "dayLabelKey": "dayToday",
+    "matches": [
       {
-        id: "CWC-2025-23",
-        time: "11:00 COT",
-        team1Id: "PAL",
-        team2Id: "BOT",
-        score1: null,
-        score2: null,
-        venue: { en: "Lincoln Financial Field, Philadelphia", es: "Lincoln Financial Field, Filadelfia" },
-        status: "SCHEDULED",
-        details: {
-          en: {
-            stats: { title: "Key Statistics (Last 2 CWC Matches)", content: [] },
-            prediction: { title: "Expert Analysis", analysis: "", keyPredictions: [
-                { label: "", value: "", odds: "", outcome: "PENDING" },
-                { label: "", value: "", odds: "", outcome: "PENDING" },
-                { label: "", value: "", odds: "", outcome: "PENDING" }
+        "id": "CWC-2025-23",
+        "time": "11:00 COT",
+        "team1Id": "PAL",
+        "team2Id": "BOT",
+        "score1": null,
+        "score2": null,
+        "venue": {
+          "en": "Lincoln Financial Field, Philadelphia",
+          "es": "Lincoln Financial Field, Filadelfia"
+        },
+        "status": "SCHEDULED",
+        "details": {
+          "en": {
+            "stats": {
+              "title": "Key Statistics (Last 2 CWC Matches)",
+              "content": [
+                "Avg. Goals Scored: PALMEIRAS 2.0 - BOTAFOGO 0.5",
+                "Avg. Goals Conceded: PALMEIRAS 1.0 - BOTAFOGO 0.5",
+                "Avg. Corners: PALMEIRAS 5.0 - BOTAFOGO 2.0",
+                "Avg. Cards: PALMEIRAS 2.0 - BOTAFOGO 1.5"
+              ]
+            },
+            "prediction": {
+              "title": "Expert Analysis",
+              "analysis": "This all-Brazilian clash pits Palmeiras' potent attack against Botafogo's stern defense. Palmeiras has scored consistently in the tournament (averaging 2.0 goals), while Botafogo has been exceptionally tight at the back, conceding only 0.5 goals on average. The key battle will be Palmeiras' offensive power against Botafogo's organization. Given Botafogo's low offensive output (0.5 goals per game) and Palmeiras' balanced performance, the São Paulo side appears to have the edge in a match that is expected to be tactical and low-scoring.",
+              "keyPredictions": [
+                {
+                  "label": "To Qualify",
+                  "value": "Palmeiras",
+                  "odds": "-250",
+                  "outcome": "PENDING"
+                },
+                {
+                  "label": "Total Goals",
+                  "value": "Under 2.5",
+                  "odds": "-189",
+                  "outcome": "PENDING"
+                },
+                {
+                  "label": "Both Teams to Score",
+                  "value": "No",
+                  "odds": "-125",
+                  "outcome": "PENDING"
+                }
               ]
             }
           },
-          es: {
-            stats: { title: "Estadísticas Clave (Últimos 2 Partidos CWC)", content: [] },
-            prediction: { title: "Análisis Experto", analysis: "", keyPredictions: [
-                { label: "", value: "", odds: "", outcome: "PENDING" },
-                { label: "", value: "", odds: "", outcome: "PENDING" },
-                { label: "", value: "", odds: "", outcome: "PENDING" }
+          "es": {
+            "stats": {
+              "title": "Estadísticas Clave (Últimos 2 Partidos CWC)",
+              "content": [
+                "Avg. Goals Scored: PALMEIRAS 2.0 - BOTAFOGO 0.5",
+                "Avg. Goals Conceded: PALMEIRAS 1.0 - BOTAFOGO 0.5",
+                "Avg. Corners: PALMEIRAS 5.0 - BOTAFOGO 2.0",
+                "Avg. Cards: PALMEIRAS 2.0 - BOTAFOGO 1.5"
+              ]
+            },
+            "prediction": {
+              "title": "Análisis Experto",
+              "analysis": "Este choque de brasileños enfrenta el potente ataque de Palmeiras contra la sólida defensa de Botafogo. Palmeiras ha marcado de forma consistente en el torneo (promediando 2.0 goles), mientras que Botafogo ha sido excepcionalmente hermético atrás, concediendo solo 0.5 goles en promedio. La batalla clave será el poder ofensivo de Palmeiras contra la organización de Botafogo. Dada la baja producción ofensiva de Botafogo (0.5 goles por partido) y el rendimiento equilibrado de Palmeiras, el equipo paulista parece tener la ventaja en un partido que se espera sea táctico y de pocos goles.",
+              "keyPredictions": [
+                {
+                  "label": "Clasificará",
+                  "value": "Palmeiras",
+                  "odds": "-250",
+                  "outcome": "PENDING"
+                },
+                {
+                  "label": "Total de Goles",
+                  "value": "Menos de 2.5",
+                  "odds": "-189",
+                  "outcome": "PENDING"
+                },
+                {
+                  "label": "Ambos Equipos Marcan",
+                  "value": "No",
+                  "odds": "-125",
+                  "outcome": "PENDING"
+                }
               ]
             }
           }
         }
       },
       {
-        id: "CWC-2025-24",
-        time: "15:00 COT",
-        team1Id: "BEN",
-        team2Id: "CHE",
-        score1: null,
-        score2: null,
-        venue: { en: "Bank of America Stadium, Charlotte, NC", es: "Bank of America Stadium, Charlotte, NC" },
-        status: "SCHEDULED",
-        details: {
-          en: {
-            stats: { title: "Key Statistics (Last 2 CWC Matches)", content: [] },
-            prediction: { title: "Expert Analysis", analysis: "", keyPredictions: [
-                { label: "", value: "", odds: "", outcome: "PENDING" },
-                { label: "", value: "", odds: "", outcome: "PENDING" },
-                { label: "", value: "", odds: "", outcome: "PENDING" }
+        "id": "CWC-2025-24",
+        "time": "15:00 COT",
+        "team1Id": "BEN",
+        "team2Id": "CHE",
+        "score1": null,
+        "score2": null,
+        "venue": {
+          "en": "Bank of America Stadium, Charlotte, NC",
+          "es": "Bank of America Stadium, Charlotte, NC"
+        },
+        "status": "SCHEDULED",
+        "details": {
+          "en": {
+            "stats": {
+              "title": "Key Statistics (Last 2 CWC Matches)",
+              "content": [
+                "Avg. Goals Scored: Benfica 1.5 - Chelsea 2.0",
+                "Avg. Goals Conceded: Benfica 1.0 - Chelsea 1.5",
+                "Avg. Corners: Benfica 5.0 - Chelsea 2.5",
+                "Avg. Cards: Benfica 3.5 - Chelsea 1.0"
+              ]
+            },
+            "prediction": {
+              "title": "Expert Analysis",
+              "analysis": "This projects to be an entertaining encounter between two attack-minded teams. Chelsea has a higher goal average (2.0), but has also conceded more (1.5). Benfica has shown they can score against tough opposition and has a high card average (3.5), indicating aggressive play. With both teams showing offensive firepower and defensive vulnerabilities, a match with goals from both sides seems likely. Chelsea's slightly superior attack gives them the edge to advance.",
+              "keyPredictions": [
+                {
+                  "label": "To Qualify",
+                  "value": "Chelsea",
+                  "odds": "-145",
+                  "outcome": "PENDING"
+                },
+                {
+                  "label": "Both Teams to Score",
+                  "value": "Yes",
+                  "odds": "-138",
+                  "outcome": "PENDING"
+                },
+                {
+                  "label": "Total Goals",
+                  "value": "Over 2.5",
+                  "odds": "-105",
+                  "outcome": "PENDING"
+                }
               ]
             }
           },
-          es: {
-            stats: { title: "Estadísticas Clave (Últimos 2 Partidos CWC)", content: [] },
-            prediction: { title: "Análisis Experto", analysis: "", keyPredictions: [
-                { label: "", value: "", odds: "", outcome: "PENDING" },
-                { label: "", value: "", odds: "", outcome: "PENDING" },
-                { label: "", value: "", odds: "", outcome: "PENDING" }
+          "es": {
+            "stats": {
+              "title": "Estadísticas Clave (Últimos 2 Partidos CWC)",
+              "content": [
+                "Avg. Goals Scored: Benfica 1.5 - Chelsea 2.0",
+                "Avg. Goals Conceded: Benfica 1.0 - Chelsea 1.5",
+                "Avg. Corners: Benfica 5.0 - Chelsea 2.5",
+                "Avg. Cards: Benfica 3.5 - Chelsea 1.0"
+              ]
+            },
+            "prediction": {
+              "title": "Análisis Experto",
+              "analysis": "Este se proyecta como un encuentro entretenido entre dos equipos de mentalidad ofensiva. El Chelsea tiene un promedio de goles más alto (2.0), pero también ha concedido más (1.5). El Benfica ha demostrado que puede marcar contra rivales duros y tiene un alto promedio de tarjetas (3.5), lo que indica un juego agresivo. Con ambos equipos mostrando poder de fuego ofensivo y vulnerabilidades defensivas, un partido con goles de ambos lados parece probable. El ataque ligeramente superior del Chelsea les da la ventaja para avanzar.",
+              "keyPredictions": [
+                {
+                  "label": "Clasificará",
+                  "value": "Chelsea",
+                  "odds": "-145",
+                  "outcome": "PENDING"
+                },
+                {
+                  "label": "Ambos Equipos Marcan",
+                  "value": "Sí",
+                  "odds": "-138",
+                  "outcome": "PENDING"
+                },
+                {
+                  "label": "Total de Goles",
+                  "value": "Más de 2.5",
+                  "odds": "-105",
+                  "outcome": "PENDING"
+                }
               ]
             }
           }
-        }
-      }
-    ]
-  }
+        }}
+      ]
+    }
 ];
 
 // =================================================================
