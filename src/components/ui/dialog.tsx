@@ -59,7 +59,7 @@ const DialogHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-shrink-0 flex-col space-y-1.5 p-6 text-center sm:text-left",
+      "flex flex-shrink-0 flex-col space-y-1.5 p-6 pb-0 text-center sm:text-left",
       className
     )}
     {...props}
@@ -73,7 +73,7 @@ const DialogFooter = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-shrink-0 flex-col-reverse p-6 sm:flex-row sm:justify-end sm:space-x-2",
+      "flex flex-shrink-0 flex-col-reverse p-6 pt-0 sm:flex-row sm:justify-end sm:space-x-2",
       className
     )}
     {...props}
@@ -102,7 +102,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-sm text-muted-foreground pt-2", className)}
     {...props}
   />
 ))

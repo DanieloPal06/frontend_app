@@ -7,7 +7,6 @@ import { Separator } from '@/components/ui/separator';
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface MatchCardProps {
   match: Match;
@@ -35,16 +34,16 @@ interface MatchCardProps {
 
 interface TeamDisplayProps {
   team: NonNullable<Match['team1']>;
-  isReversedOnDesktop?: boolean;
+  scoreOrder?: 'first' | 'last';
 }
 
-function TeamDisplay({ team, isReversedOnDesktop = false }: TeamDisplayProps) {
-  const desktopFlexDirection = isReversedOnDesktop ? 'md:flex-row-reverse md:justify-between' : 'md:flex-row md:justify-between';
-  const scoreOrder = isReversedOnDesktop ? 'md:order-first' : 'md:order-last';
-
+function TeamDisplay({ team, scoreOrder = 'last' }: TeamDisplayProps) {
+  const flexDirection =
+    scoreOrder === 'first' ? 'flex-row-reverse justify-end' : 'flex-row';
+  
   return (
-    <div className={`flex w-full flex-col items-center gap-2 text-center md:flex-row md:text-left ${desktopFlexDirection}`}>
-      <div className='flex flex-col items-center gap-2 md:flex-row'>
+    <div className={`flex w-full items-center md:gap-4 flex-col md:${flexDirection}`}>
+      <div className="flex flex-col md:flex-row items-center gap-2 text-center md:text-left">
         {team.logoUrl && (
           <Image
             src={team.logoUrl}
@@ -58,7 +57,7 @@ function TeamDisplay({ team, isReversedOnDesktop = false }: TeamDisplayProps) {
         <span className="font-semibold text-base md:text-lg group-hover:text-primary transition-colors">{team.name}</span>
       </div>
       {typeof team.score === 'number' && (
-        <span className={`font-bold text-xl text-primary md:ml-auto ${scoreOrder}`}>{team.score}</span>
+        <span className={`font-bold text-xl text-primary md:ml-auto`}>{team.score}</span>
       )}
     </div>
   );
@@ -106,14 +105,14 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
           </CardHeader>
           <CardContent className="pt-0">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 py-4">
-              <div className="w-full md:w-2/5 flex justify-center">
-                <TeamDisplay team={match.team1} />
+              <div className="w-full md:w-2/5 flex justify-center md:justify-start">
+                <TeamDisplay team={match.team1} scoreOrder="last" />
               </div>
               <div className="text-muted-foreground font-bold text-lg">
                 {labels.vs}
               </div>
-              <div className="w-full md:w-2/5 flex justify-center">
-                <TeamDisplay team={match.team2} isReversedOnDesktop={true} />
+              <div className="w-full md:w-2/5 flex justify-center md:justify-end">
+                <TeamDisplay team={match.team2} scoreOrder="first" />
               </div>
             </div>
             <Separator className="my-3" />
@@ -124,21 +123,21 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
         </Card>
       </DialogTrigger>
       <DialogContent className="w-[95vw] rounded-lg sm:max-w-2xl max-h-[90vh]">
-        <DialogHeader className="pb-2">
+        <DialogHeader>
           <DialogTitle>{dialogLabels.title}</DialogTitle>
           {match.details && (
-            <DialogDescription className="text-center sm:text-left pt-1">
+            <DialogDescription>
               {match.team1.name} vs {match.team2.name}
             </DialogDescription>
           )}
         </DialogHeader>
 
-        <ScrollArea className="flex-1 min-h-0">
-          <div className="px-6 py-4">
+        <div className="flex-1 min-h-0 overflow-y-auto">
+          <div className="p-6 pt-0">
             {!match.details ? (
               <p className="text-muted-foreground">{dialogLabels.noDetails}</p>
             ) : (
-              <div className="grid gap-4">
+              <div className="grid gap-4 pt-4">
                 <div>
                   <h3 className="text-lg font-semibold mb-2">{match.details.stats.title}</h3>
                   <ul className="list-disc list-inside space-y-1 text-muted-foreground">
@@ -188,9 +187,8 @@ export function MatchCard({ match, labels, dialogLabels }: MatchCardProps) {
               </div>
             )}
           </div>
-        </ScrollArea>
-
-        <DialogFooter className="pt-2">
+        </div>
+        <DialogFooter>
             <Button type="button" variant="secondary" asChild>
                <DialogTrigger>{dialogLabels.closeButton}</DialogTrigger>
             </Button>
