@@ -594,7 +594,126 @@ const rawSchedule: RawDaySchedule[] = [
           }
         }}
       ]
-    }
+    },
+    // Day of June 29, 2025
+  {
+    "dateISO": "2025-06-29",
+    "dayLabelKey": "day16",
+    "matches": [
+      {
+        "id": "CWC-2025-25",
+        "time": "14:00 COT",
+        "team1Id": "PSG",
+        "team2Id": "MIA",
+        "score1": null,
+        "score2": null,
+        "venue": { "en": "Gillette Stadium, Foxborough", "es": "Gillette Stadium, Foxborough" },
+        "status": "SCHEDULED",
+        "details": {
+          "en": {
+            "stats": {
+              "title": "Key Statistics (Last 3 CWC Matches)",
+              "content": [
+                "Avg. Goals Scored: PSG 2.0 - Inter Miami 1.3",
+                "Avg. Goals Conceded: PSG 0.7 - Inter Miami 1.7",
+                "Avg. Corners: PSG 7.3 - Inter Miami 4.7",
+                "Avg. Cards: PSG 1.3 - Inter Miami 2.7"
+              ]
+            },
+            "prediction": {
+              "title": "Expert Analysis",
+              "analysis": "This is a classic clash of styles: PSG's relentless, athletic press against Inter Miami's possession-based game orchestrated by an older, but still brilliant, core. PSG will look to use their superior physicality and pace to overwhelm Miami's build-up. The key battle will be whether Lionel Messi can find pockets of space between PSG's midfield and defense to bypass the press and create chances against a statistically superior defense. While Messi's magic can produce a goal at any moment, PSG's overall cohesion, intensity, and squad depth make them the clear favorites to control the game and advance.",
+              "keyPredictions": [
+                { "label": "To Qualify", "value": "Paris Saint-Germain", "odds": "1.30" , "outcome": "PENDING"},
+                //{ "label": "Both Teams to Score", "value": "Yes", "odds": "1.80" , "outcome": "PENDING" },
+                { "label": "Total Goals", "value": "Over 2.5", "odds": "1.65" , "outcome": "PENDING" },
+                { "label": "Inter Miami - Total Cards", "value": "Over 2.5", "odds": "2.10" , "outcome": "PENDING" },
+                { "label": "Total Corners", "value": "Over 9.5", "odds": "1.85" , "outcome": "PENDING" }
+              ]
+            }
+          },
+          "es": {
+            "stats": {
+              "title": "Estadísticas Clave (Últimos 3 Partidos CWC)",
+              "content": [
+                "Prom. Goles Anotados: PSG 2.0 - Inter Miami 1.3",
+                "Prom. Goles Recibidos: PSG 0.7 - Inter Miami 1.7",
+                "Prom. Córners: PSG 7.3 - Inter Miami 4.7",
+                "Prom. Tarjetas: PSG 1.3 - Inter Miami 2.7"
+              ]
+            },
+            "prediction": {
+              "title": "Análisis Experto",
+              "analysis": "Este es un choque de estilos clásico: la presión atlética e incesante del PSG contra el juego de posesión de Inter Miami, orquestado por un núcleo de jugadores más veterano pero todavía brillante. El PSG buscará usar su superioridad física y velocidad para abrumar la construcción de juego de Miami. La batalla clave será si Lionel Messi puede encontrar espacios entre el mediocampo y la defensa del PSG para eludir la presión y crear oportunidades contra una defensa estadísticamente superior. Aunque la magia de Messi puede producir un gol en cualquier momento, la cohesión general, la intensidad y la profundidad de plantilla del PSG los convierten en los claros favoritos para controlar el partido y avanzar.",
+              "keyPredictions": [
+                { "label": "Clasificará", "value": "Paris Saint-Germain", "odds": "1.30" , "outcome": "PENDING" },
+                //{ "label": "Ambos Equipos Marcarán", "value": "Sí", "odds": "1.80" , "outcome": "PENDING" },
+                { "label": "Total de Goles", "value": "Más de 2.5", "odds": "1.65" , "outcome": "PENDING" },
+                { "label": "Inter Miami - Total de Tarjetas", "value": "Más de 2.5", "odds": "2.10" , "outcome": "PENDING" },
+                { "label": "Total de Córners", "value": "Más de 9.5", "odds": "1.85" , "outcome": "PENDING" }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": "CWC-2025-26",
+        "time": "19:00 COT",
+        "team1Id": "FLA",
+        "team2Id": "BAY",
+        "score1": null,
+        "score2": null,
+        "venue": { "en": "Arrowhead Stadium, Kansas City", "es": "Arrowhead Stadium, Kansas City" },
+        "status": "SCHEDULED",
+        "details": {
+          "en": {
+            "stats": {
+              "title": "Key Statistics (Last 3 CWC Matches)",
+              "content": [
+                "Avg. Goals Scored: Flamengo 2.0 - Bayern Munich 3.0",
+                "Avg. Goals Conceded: Flamengo 1.3 - Bayern Munich 0.7",
+                "Avg. Corners: Flamengo 5.0 - Bayern Munich 8.0",
+                "Avg. Cards: Flamengo 3.0 - Bayern Munich 1.7"
+              ]
+            },
+            "prediction": {
+              "title": "Expert Analysis",
+              "analysis": "A fascinating tactical duel between two teams that favor a high press. Bayern's press is a systematic, well-oiled machine, while Flamengo's is fueled by intensity and individual flair. The key battle will be in midfield: can Flamengo's technical players (De la Cruz, Arrascaeta) evade Bayern's organized pressure to unleash their forwards, or will the German side's physicality dominate and force turnovers in dangerous areas? Bayern's superior defensive record and consistent goal-scoring against high-level opponents make them strong favorites. Expect a fiery, high-card match where Bayern's efficiency ultimately proves decisive.",
+              "keyPredictions": [
+                //{ "label": "To Qualify", "value": "Bayern Munich", "odds": "1.40" , "outcome": "PENDING" },
+                //{ "label": "Bayern Munich - Handicap", "value": "-1.5", "odds": "2.25" , "outcome": "PENDING" },
+                { "label": "Total Goals", "value": "Over 3.5", "odds": "2.40" , "outcome": "PENDING" },
+                { "label": "Total Cards", "value": "Over 4.5", "odds": "1.90" , "outcome": "PENDING" },
+                { "label": "Bayern Munich - Total Corners", "value": "Over 6.5", "odds": "1.80" , "outcome": "PENDING" }
+              ]
+            }
+          },
+          "es": {
+            "stats": {
+              "title": "Estadísticas Clave (Últimos 3 Partidos CWC)",
+              "content": [
+                "Prom. Goles Anotados: Flamengo 2.0 - Bayern Múnich 3.0",
+                "Prom. Goles Recibidos: Flamengo 1.3 - Bayern Múnich 0.7",
+                "Prom. Córners: Flamengo 5.0 - Bayern Múnich 8.0",
+                "Prom. Tarjetas: Flamengo 3.0 - Bayern Múnich 1.7"
+              ]
+            },
+            "prediction": {
+              "title": "Análisis Experto",
+              "analysis": "Un fascinante duelo táctico entre dos equipos que prefieren la presión alta. La presión del Bayern es una máquina sistemática y bien engrasada, mientras que la del Flamengo se alimenta de la intensidad y el talento individual. La batalla clave estará en el mediocampo: ¿podrán los jugadores técnicos del Flamengo (De la Cruz, Arrascaeta) evadir la presión organizada del Bayern para lanzar a sus delanteros, o dominará el físico del equipo alemán forzando pérdidas de balón en zonas peligrosas? El superior historial defensivo del Bayern y su consistencia goleadora contra rivales de alto nivel los convierten en firmes favoritos. Se espera un partido intenso, con muchas tarjetas, donde la eficiencia del Bayern finalmente resultará decisiva.",
+              "keyPredictions": [
+                //{ "label": "Clasificará", "value": "Bayern Múnich", "odds": "1.40" , "outcome": "PENDING" },
+                //{ "label": "Bayern Múnich - Hándicap", "value": "-1.5", "odds": "2.25" , "outcome": "PENDING" },
+                { "label": "Total de Goles", "value": "Más de 3.5", "odds": "2.40" , "outcome": "PENDING" },
+                { "label": "Total de Tarjetas", "value": "Más de 4.5", "odds": "1.90" , "outcome": "PENDING" },
+                { "label": "Bayern Múnich - Total de Córners", "value": "Más de 6.5", "odds": "1.80" , "outcome": "PENDING" }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
 ];
 
 // =================================================================
