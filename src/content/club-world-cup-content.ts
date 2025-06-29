@@ -514,13 +514,13 @@ const rawSchedule: RawDaySchedule[] = [
         "time": "15:00 COT",
         "team1Id": "BEN",
         "team2Id": "CHE",
-        "score1": null,
-        "score2": null,
+        "score1": 1,
+        "score2": 4,
         "venue": {
           "en": "Bank of America Stadium, Charlotte, NC",
           "es": "Bank of America Stadium, Charlotte, NC"
         },
-        "status": "SCHEDULED",
+        "status": "FINISHED",
         "details": {
           "en": {
             "stats": {
@@ -540,19 +540,19 @@ const rawSchedule: RawDaySchedule[] = [
                   "label": "To Qualify",
                   "value": "Chelsea",
                   "odds": "-145",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 },
                 {
                   "label": "Both Teams to Score",
                   "value": "Yes",
                   "odds": "-138",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 },
                 {
                   "label": "Total Goals",
                   "value": "Over 2.5",
                   "odds": "-105",
-                  "outcome": "PENDING"
+                  "outcome": "LOST"
                 }
               ]
             }
@@ -575,19 +575,19 @@ const rawSchedule: RawDaySchedule[] = [
                   "label": "Clasificará",
                   "value": "Chelsea",
                   "odds": "-145",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 },
                 {
                   "label": "Ambos Equipos Marcan",
                   "value": "Sí",
                   "odds": "-138",
-                  "outcome": "PENDING"
+                  "outcome": "WON"
                 },
                 {
                   "label": "Total de Goles",
                   "value": "Más de 2.5",
                   "odds": "-105",
-                  "outcome": "PENDING"
+                  "outcome": "LOST"
                 }
               ]
             }
